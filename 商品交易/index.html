@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   <style>
+      .left {
+        float: left;
+        width: 300px;
+      }
+      .right {
+        float: right;
+        margin-left: 300px;
+      }
+      a{TEXT-DECORATION:none}
+      a:hover{TEXT-DECORATION:underline}
+
+      .rotate {
+
+        -webkit-transition: -webkit-transform 2s;
+      }
+
+      .rotate:hover {
+        -webkit-transform: rotate(360deg);
+      }
+
+      .tag-list-link {
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        background-color: #5d5a5a;
+        color: #fff;
+        box-shadow: 0 3px 5px rgba(0,0,0,.12);
+        transition: .2s;
+      }
+
+      .article-meta{
+        display: flex;
+        color: #5c6b72;
+      }
+
+</style>
+
+
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    牛客-商品交易 |  香蕉不娇、芒果不盲
+  </title>
+  
+  <link rel="shortcut icon" href="/logo.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+<script src="/js/clicklove.js"></script>
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+  
+  
+
+  
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="香蕉不娇、芒果不盲" type="application/atom+xml">
+</head>
+
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-商品交易" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  牛客-商品交易
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93/index.html" class="article-date">
+  <time datetime="2020-09-27T06:41:03.630Z" itemprop="datePublished">2020-09-27</time>&nbsp;&nbsp;&nbsp;
+
+<!--   
+        作者: 香蕉不娇、芒果不盲
+   -->
+
+</a>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p>这题在牛客网上标签有<strong>动态规划</strong>和<strong>贪心</strong>，因此，用可以用动态规划和贪心两种算法来解决。</p>
+<a id="more"></a>
+
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>珐达采下个月要去鸥洲各国考察一趟，采购流通神秘石并从中搞点油水。<br>珐达采会按顺序依次经过序号分别为$1, 2, 3, …, n$的鸥洲国家，在第i个国家神秘石的流通价格为$A_i$鸥。因为行程紧张，在每个国家的停留时间有限，所以他只能花费$A_i$鸥买入一块神秘石，或者卖出一块手中的神秘石获得$A_i$鸥，或者什么都不做，而且因为神秘石的保存需要极其先进的高级材料容器，其材料稀有且制作困难，珐达采只有一份容器，故无论何时珐达采手里 最多只能拥有一块神秘石。<br>珐达采想知道最终能从中获利最大多少鸥。因为交易需要手续费，所以珐达采还想知道在获利最大收益的同时，最少需要交易多少次。因为珐达采是大财阀，所以你可以认为他一开始金钱无限。</p>
+<h4 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h4><blockquote>
+<p>第一行一个数$n$。$1\le n \le 100000$</p>
+<p>第二行n$n$数，第$i$个数表示$A_i$。$1\le A_i \le 1e9$</p>
+</blockquote>
+<h4 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共一行，两个数，分别代表最大收益和对应的最少交易次数。</p>
+</blockquote>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>s输入</p>
+<blockquote>
+<p>5<br>9 7 10 1 5</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>7 4</p>
+</blockquote>
+<h3 id="方法分析"><a href="#方法分析" class="headerlink" title="方法分析"></a>方法分析</h3><p>初步分析后，此题的意思就是，给定$N$个数，按顺序依次经过这$N$个数，当处于第$i$个数的时候，可以以第$i$个数为价格买进或者卖出宝石，有一个限制条件就是手里最多只能买进1个宝石。</p>
+<h4 id="暴力穷举"><a href="#暴力穷举" class="headerlink" title="暴力穷举"></a>暴力穷举</h4><p>那么每经过一个数的时候，有且只有三种操作：1-买宝石，2-卖宝石，3-不买也不卖。定义从第一个数到最后一个数，对每一个数所作的操作构成的序列称为一个操作序列。因此，给定N个数，最多有$3^N$个操作序列，当然其中肯定有不合理的序列（简便起见，不作过多解释），那么用暴力穷举的算法，时间复杂度接近于$O(3^N)$。</p>
+<h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>动态规划算法最核心的要素有两点：<strong>状态；状态转移方程；</strong><br>状态选取的好坏有时候可以决定这个问题能否被解决。一般状态的选取要满足两个条件：<br><strong>1. 最优子结构</strong><br><strong>子结构</strong>：子结构指的是，一个问题可以分解为多个多个子问题，每一个子问题就称为一个子结构，而子问题又能分解为更小的子问题，形成更小的子结构。<br><strong>最优子结构</strong>：每一个问题或子问题的最优值，都能够有各自的子问题的最优解推导而来。而每一个子问题的最优解即为<strong>状态</strong>。<br><strong>2. 无后效性</strong><br><strong>无后效性</strong>：无后效性指的是，我们只关心每一个子问题的最优值<strong>是多少</strong>，而不关心这个最优值是<strong>怎么来的</strong>。换句话说就是，无论当前这个子问题的最优值是采用什么方法怎么得到的，都不影响后续问题（当前子问题的父问题）最优值的求解。</p>
+<p>对于本题，给定$n$个数$[a_1,a_2, \dots, a_{n-1}, a_n]$目标是求顺序经过这$n$个数后的最大收益。子问题可以定义成：求顺序经过$[a_1, a_2, \dots, a_{n-1}]$这$n-1$个数的最大收益，然后再决定在第$n$个数的时候采取哪种操作，是<strong>买</strong>、<strong>卖</strong>还是<strong>不买也不卖</strong>来判断原问题的最优值。</p>
+<p>首先，这里我们定义子问题【求顺序经过$[a_1,a_2, \dots, a_{i}]$这$i$个数的最大收益】的解也就是状态，为<strong>dp[i]</strong>。</p>
+<p>然后，在第$i+1$个数的时候，判断采取哪种操作，得到子问题【求顺序经过$[a_1,a_2, \dots, a_{i+1}]$这$i+1$个数的最大收益】的最优值<strong>dp[i+1]</strong>。<br>这样似乎很好，可是在知道了<strong>dp[i]</strong>之后，却不知道经过$i$个数后手里有没有宝石，那么在判断第$i+1$个数采取哪种操作的时候就没有判断依据，因为都不知道到了手里还有没有宝石。<br>那么我们可以引入一个参数<strong>own</strong>(取值True或False)指示手里有没有宝石，如果宝石被卖掉则own置为False，如果买进则置为True，否则不改变own的值。</p>
+<p>以上过程似乎很合理，可是当我们在决策第$i+1$个数的时候，我们只能知道own是True或者False其中一种情况。换句话说，如果此时own为False，那我们就知道第$i$个数决策后手里没有宝石，此时我们会在第$i+1$个数上决策到底买还是不买。可是我们不知道如果own为True，也就是第$i$个数决策后手里有宝石的情况。你可能会说，既然own为False了，那么肯定own为False是第$i$个数的最佳决策结果，很正确。可是存在一种情况就是，我在第$i$个数的时候拥有宝石，也就是own为True（买进或者不卖）虽然比不拥有宝石的收益小，但有可能我在后面卖掉获得的收益会超过当前own为False的收益。</p>
+<p>所以我们要对比有或没有宝石两种情况，在任何一个中间数$i$上，我们要求出有宝石的最大收益和没有宝石的最大收益。两者虽然不等，但后面有可能有宝石的超越没宝石的，或者相反。最终的结果要到最后一个数的时候才知道。因此我们要同时记录有宝石和没宝石两种情况。因此我们将<strong>d[i]</strong>扩展为<strong>d[0][i]</strong>和<strong>d[1][i]</strong>，前者表示在第$i$个数决策完之后手上没有宝石的收益，后者表示在第$i$个数决策完之后手上有宝石的收益。</p>
+<p>对于<strong>d[0][i]</strong>，在第$i$个数决策完之后手上没有宝石，有两种情况。一种是在第$i-1$决策完之后手上本来就没有宝石，那么为了保持在第$i$个时刻没宝石，就不能买进，所以<strong>d[0][i]</strong>的收益就是<strong>d[0][i-1]</strong>；另一种是在第$i-1$决策完之后手上有宝石，那么为了保持在第$i$个时刻没宝石，就必须在第$i$个时刻卖掉，所以<strong>d[0][i]</strong>的收益就是<strong>d[1][i-1]</strong> + a[i]。这里的a[i]是宝石在第$i$个数上的价格。为了使得<strong>d[0][i]</strong>最大，所以求一下两者之间的最大值：<br>$$<br>d[0][i] = max(d[0][i-1], d[1][i-1] + a[i])<br>$$</p>
+<p>对于<strong>d[1][i]</strong>，在第$i$个数决策完之后手上有宝石，也有两种情况。一种是$i-1$时刻没有宝石，另一种是有宝石。分析同上，试着分析一下。最后可以得到：<br>$$<br>d[1][i] = max(d[1][i-1], d[0][i-1] - a[i])<br>$$<br>第二个公式为什么是减去a[i]？仔细想一下。</p>
+<p>到此为止，我们即可得到动态规划要求的每一个时刻的状态d[0][i]和d[1][i]，以及状态转移方程：<br>$$<br>d[0][i] = max(d[0][i-1], d[1][i-1] + a[i])\\<br>d[1][i] = max(d[1][i-1], d[0][i-1] - a[i])<br>$$</p>
+<p>根据状态转移方程即可得到动态规划核心代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">	d[<span class="number">0</span>][i] = max(d[<span class="number">0</span>][i<span class="number">-1</span>], d[<span class="number">1</span>][i<span class="number">-1</span>] + a[i])</span><br><span class="line">	d[<span class="number">1</span>][i] = max(d[<span class="number">1</span>][i<span class="number">-1</span>], d[<span class="number">0</span>][i<span class="number">-1</span>] - a[i])</span><br><span class="line"><span class="comment"># 最后返回有宝石和没宝石两种情况的最大值</span></span><br><span class="line"><span class="keyword">return</span> max(d[<span class="number">0</span>][n], d[<span class="number">1</span>][n])</span><br></pre></td></tr></table></figure>
+<p>待续…</p>
+<h4 id="贪心策略"><a href="#贪心策略" class="headerlink" title="贪心策略"></a>贪心策略</h4><p>待续…</p>
+
+	  
+
+
+      	  
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          ~赞~
+        </div>
+        
+    </div>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/%E5%85%AC%E5%B9%B3%E5%88%92%E5%88%86/index.html" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">牛客-公平划分</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'IBXbYeb2rqEJjd9E7AbMgdey-gzGzoHsz',
+        app_key: 'RLhFH89nQaSMGKs0Nl2egMtM',
+        path: window.location.pathname,
+        avatar: 'wavatar',
+        placeholder: '说说吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</article>
+</section>
+      <footer class="footer">
+	<div class="outer">
+		  	  <!-- 版权 -->
+		  	  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		      <div align="center">
+			        &copy;
+			        2019-2020
+			        <font color="grey" size="3px">&hearts;</font>
+			        Cheng Song
+
+		      &nbsp;
+
+					<!-- 备案 -->
+				    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow"><img src="/images/beian.png" height="18px" weight="18px" align="center"/>鄂ICP备20012823号</a>
+		      </div>
+	</div>
+
+	<div align="center">
+	<div class="powered-by">
+		<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+		  本站访客数:<span id="busuanzi_value_site_uv"></span>
+		</span>
+	&nbsp; 	
+	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278554282'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278554282%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+	</div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+      <a href="/index.html"><img class="rotate" src="/images/cs.svg" alt="香蕉不娇、芒果不盲"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives/index.html">时间轴</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/index.html">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery/index.html">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/shuoshuo/index.html">动态</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/index.html">主页</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://github.com/chsong513/" target="_blank" rel="noopener">
+        <img src="/images/github.png" style="weight:25px; height:25px;"/>
+      </a>
+    </li>
+
+<!--     <li class="nav-item">
+      <a class="nav-item-link" href="mailto:chsong@mail.ustc.edu.cn">
+        <img src="/images/mail.png" style="weight:19.2px; height:15px;"/>
+      </a>
+    </li> -->
+
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>么么哒，请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+
+</html>

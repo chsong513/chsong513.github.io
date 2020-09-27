@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   <style>
+      .left {
+        float: left;
+        width: 300px;
+      }
+      .right {
+        float: right;
+        margin-left: 300px;
+      }
+      a{TEXT-DECORATION:none}
+      a:hover{TEXT-DECORATION:underline}
+
+      .rotate {
+
+        -webkit-transition: -webkit-transform 2s;
+      }
+
+      .rotate:hover {
+        -webkit-transform: rotate(360deg);
+      }
+
+      .tag-list-link {
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        background-color: #5d5a5a;
+        color: #fff;
+        box-shadow: 0 3px 5px rgba(0,0,0,.12);
+        transition: .2s;
+      }
+
+      .article-meta{
+        display: flex;
+        color: #5c6b72;
+      }
+
+</style>
+
+
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    牛客-公平划分 |  香蕉不娇、芒果不盲
+  </title>
+  
+  <link rel="shortcut icon" href="/logo.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+<script src="/js/clicklove.js"></script>
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+  
+  
+
+  
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="香蕉不娇、芒果不盲" type="application/atom+xml">
+</head>
+
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-公平划分" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  牛客-公平划分
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/%E5%85%AC%E5%B9%B3%E5%88%92%E5%88%86/index.html" class="article-date">
+  <time datetime="2020-07-12T12:16:34.000Z" itemprop="datePublished">2020-07-12</time>&nbsp;&nbsp;&nbsp;
+
+<!--   
+        作者: 香蕉不娇、芒果不盲
+   -->
+
+</a>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p>牛客网系统上的测试用例经常有问题，比如这一题，输入数据有问题。一般情况下，代码完全正确只能通过80%的case。必须对有问题的输入针对性处理才能通过。</p>
+<a id="more"></a>
+
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>小爱和小溪有N个数字，他们两个想公平的分配这些数字。小爱拿的数字集合为$I = [i_1, i_2, i_K]$，小溪获得剩下的$J=[j_1, j_2, j_{N-K} ]$。但是他们衡量分配公平与否的原则与众不同:<br>$$<br>f(I) = \sum_{i\in I}\sum_{j\in J}|a_i-a_j|<br>$$<br>在小爱拿到其中的K个数字的前提下，计算出他们分配偏差$f(I)$的最小值。</p>
+<h4 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h4><blockquote>
+<p>输入第一行两个数字，分别表示总的数字量N和小爱拿的数字量K。第二行有N个数字，表示每个数字的值。</p>
+</blockquote>
+<h4 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>输出一个数字，表示分配偏差f(I)的最小值。</p>
+</blockquote>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>输入</p>
+<blockquote>
+<p>4 1</p>
+<p>3 3 3 1</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<h4 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h4><p>牛客官网给的提示是 <strong>动态规划</strong>和<strong>穷举</strong>，我没有想出动态规划的方案，这里用<strong>穷举</strong>的方式可以通过。</p>
+<p>对于给定的N个数，小爱同学拿了其中的K个数，那么也就是从N个数中取出K个数，共有$\tbinom{N}{K}$种情况。遍历这$\tbinom{N}{K}$种情况，得到最小的$f(I)$即为最后的答案。</p>
+<p>那么问题就转化成了求N个数中取K个数的所有组合情况，本题用combination(data, r)函数，data为list类型数据，r表示从data中取出r个数。combination函数能够返回所有的r个数的组合。关于组合函数combination(data, r)的详解可以看文章<strong>列表排列组合</strong>（撰写中…）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">combination</span><span class="params">(data, r)</span>:</span></span><br><span class="line">    n = len(data)</span><br><span class="line">    index = list(range(r))</span><br><span class="line">    <span class="keyword">yield</span> set(index)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(r)):</span><br><span class="line">            <span class="keyword">if</span> index[i] &lt; n - r + i:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        index[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, r):</span><br><span class="line">            index[j] = index[j<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">        <span class="keyword">yield</span> set(index)</span><br></pre></td></tr></table></figure>
+
+<p>首先，获得小爱同学的K个数的所有情况sets1 = combination(data, K)，这里combination返回的是python中的生成器，需要通过如下形式迭代形式访问每一种情况：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> set1 <span class="keyword">in</span> sets1:</span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
+
+<p>这里每一个set1就表示小爱同学的一种取K个数的情况，那么用所有的N个数剔除set1中的数，剩余的数构成set2就是小溪同学的N-K个数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set2 = set(range(N)) - set1</span><br></pre></td></tr></table></figure>
+
+<p>然后求分配偏差</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bias = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> set1:</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> set2:</span><br><span class="line">		bias += abs(data[i] - data[j])</span><br></pre></td></tr></table></figure>
+
+<p>判断是否比当前的最小偏差小</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">min_bias = min(min_bias, bias)</span><br></pre></td></tr></table></figure>
+
+<p>最后输出min_bias。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">combination</span><span class="params">(data, r)</span>:</span></span><br><span class="line">    n = len(data)</span><br><span class="line">    index = list(range(r))</span><br><span class="line">    <span class="keyword">yield</span> set(index)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(r)):</span><br><span class="line">            <span class="keyword">if</span> index[i] &lt; n - r + i:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        index[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, r):</span><br><span class="line">            index[j] = index[j<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">        <span class="keyword">yield</span> set(index)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">########## N, K 输入 ############</span></span><br><span class="line">    line1 = input().strip(<span class="string">''</span>).split(<span class="string">' '</span>)</span><br><span class="line">    N, K = int(line1[<span class="number">0</span>]), int(line1[<span class="number">1</span>])</span><br><span class="line">    <span class="comment">################################</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> N &lt;= <span class="number">0</span> <span class="keyword">or</span> K &lt;= <span class="number">0</span>:</span><br><span class="line">        print(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    line2 = input().strip(<span class="string">''</span>).split(<span class="string">' '</span>)</span><br><span class="line">    data = [int(e) <span class="keyword">for</span> e <span class="keyword">in</span> line2]</span><br><span class="line">    </span><br><span class="line">    min_bias = sys.maxsize</span><br><span class="line">    </span><br><span class="line">    sets1 = combination(data, K)</span><br><span class="line">    <span class="keyword">for</span> set1 <span class="keyword">in</span> sets1:</span><br><span class="line">        set2 = set(range(N)) - set1</span><br><span class="line">        bias = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> set1:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> set2:</span><br><span class="line">                bias += abs(data[i] - data[j])</span><br><span class="line">        min_bias = min(min_bias, bias)</span><br><span class="line">    print(min_bias)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>正常情况下，上述代码是完全正确的。可是有的测试用例有问题，N和K应改是同一行输入的，有的测试用例N和K分两行输入。</p>
+<p><strong>正常测试用例：</strong></p>
+<blockquote>
+<p>N, K</p>
+<p>d1 d2 d3 … dN</p>
+</blockquote>
+<p><strong>异常测试用例：</strong></p>
+<blockquote>
+<p>N</p>
+<p>K</p>
+<p>d1 d2 d3 … dN</p>
+</blockquote>
+<p>因此，如果要提交通过的话，需要将上面N，K输入部分，替换成面的代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dim = list(map(int, input().split()))</span><br><span class="line"><span class="keyword">if</span> len(dim) == <span class="number">2</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = dim[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = int(input())</span><br></pre></td></tr></table></figure>
+
+	  
+
+
+      	  
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          ~赞~
+        </div>
+        
+    </div>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93/index.html" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            牛客-商品交易
+          
+        </div>
+      </a>
+    
+    
+      <a href="/CIKM-2019/index.html" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">北京参加CIKM会议</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'IBXbYeb2rqEJjd9E7AbMgdey-gzGzoHsz',
+        app_key: 'RLhFH89nQaSMGKs0Nl2egMtM',
+        path: window.location.pathname,
+        avatar: 'wavatar',
+        placeholder: '说说吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</article>
+</section>
+      <footer class="footer">
+	<div class="outer">
+		  	  <!-- 版权 -->
+		  	  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		      <div align="center">
+			        &copy;
+			        2019-2020
+			        <font color="grey" size="3px">&hearts;</font>
+			        Cheng Song
+
+		      &nbsp;
+
+					<!-- 备案 -->
+				    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow"><img src="/images/beian.png" height="18px" weight="18px" align="center"/>鄂ICP备20012823号</a>
+		      </div>
+	</div>
+
+	<div align="center">
+	<div class="powered-by">
+		<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+		  本站访客数:<span id="busuanzi_value_site_uv"></span>
+		</span>
+	&nbsp; 	
+	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278554282'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278554282%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+	</div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+      <a href="/index.html"><img class="rotate" src="/images/cs.svg" alt="香蕉不娇、芒果不盲"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives/index.html">时间轴</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/index.html">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery/index.html">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/shuoshuo/index.html">动态</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/index.html">主页</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://github.com/chsong513/" target="_blank" rel="noopener">
+        <img src="/images/github.png" style="weight:25px; height:25px;"/>
+      </a>
+    </li>
+
+<!--     <li class="nav-item">
+      <a class="nav-item-link" href="mailto:chsong@mail.ustc.edu.cn">
+        <img src="/images/mail.png" style="weight:19.2px; height:15px;"/>
+      </a>
+    </li> -->
+
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>么么哒，请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+
+</html>
