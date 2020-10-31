@@ -102,7 +102,7 @@
 
   <url>
     <loc>http://www.chsong.live/</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2020-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -110,21 +110,21 @@
   
   <url>
     <loc>http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2020-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.chsong.live/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2020-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.chsong.live/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2020-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
