@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.chsong.live/"/>
-  <updated>2020-09-27T06:41:03.630Z</updated>
+  <updated>2020-07-12T12:16:34.000Z</updated>
   <id>http://www.chsong.live/</id>
   
   <author>
@@ -17,28 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>牛客-商品交易</title>
-    <link href="http://www.chsong.live/%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93/index.html"/>
-    <id>http://www.chsong.live/%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93/index.html</id>
-    <published>2020-09-27T06:41:03.630Z</published>
-    <updated>2020-09-27T06:41:03.630Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这题在牛客网上标签有&lt;strong&gt;动态规划&lt;/strong&gt;和&lt;strong&gt;贪心&lt;/strong&gt;，因此，用可以用动态规划和贪心两种算法来解决。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="牛客网" scheme="http://www.chsong.live/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>牛客-公平划分</title>
-    <link href="http://www.chsong.live/%E5%85%AC%E5%B9%B3%E5%88%92%E5%88%86/index.html"/>
-    <id>http://www.chsong.live/%E5%85%AC%E5%B9%B3%E5%88%92%E5%88%86/index.html</id>
+    <link href="http://www.chsong.live/20200712_%E5%85%AC%E5%B9%B3%E5%88%92%E5%88%86/index.html"/>
+    <id>http://www.chsong.live/20200712_%E5%85%AC%E5%B9%B3%E5%88%92%E5%88%86/index.html</id>
     <published>2020-07-12T12:16:34.000Z</published>
     <updated>2020-07-12T12:16:34.000Z</updated>
     
@@ -55,9 +36,28 @@
   </entry>
   
   <entry>
+    <title>牛客-商品交易</title>
+    <link href="http://www.chsong.live/20200710_%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93/index.html"/>
+    <id>http://www.chsong.live/20200710_%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93/index.html</id>
+    <published>2020-07-10T11:16:34.000Z</published>
+    <updated>2020-07-10T11:16:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这题在牛客网上标签有&lt;strong&gt;动态规划&lt;/strong&gt;和&lt;strong&gt;贪心&lt;/strong&gt;，因此，用可以用动态规划和贪心两种算法来解决。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="牛客网" scheme="http://www.chsong.live/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>北京参加CIKM会议</title>
-    <link href="http://www.chsong.live/CIKM-2019/index.html"/>
-    <id>http://www.chsong.live/CIKM-2019/index.html</id>
+    <link href="http://www.chsong.live/20191107_CIKM/index.html"/>
+    <id>http://www.chsong.live/20191107_CIKM/index.html</id>
     <published>2019-11-07T13:49:28.000Z</published>
     <updated>2019-11-07T13:49:28.000Z</updated>
     
@@ -77,8 +77,8 @@
   
   <entry>
     <title>北大、清华、南大、中科大夏令营经验总结</title>
-    <link href="http://www.chsong.live/SummerCamp/index.html"/>
-    <id>http://www.chsong.live/SummerCamp/index.html</id>
+    <link href="http://www.chsong.live/20190428_SummerCamp/index.html"/>
+    <id>http://www.chsong.live/20190428_SummerCamp/index.html</id>
     <published>2019-04-18T12:30:00.000Z</published>
     <updated>2019-04-18T12:30:00.000Z</updated>
     
@@ -96,8 +96,8 @@
   
   <entry>
     <title>大学生活的回顾</title>
-    <link href="http://www.chsong.live/NWPUReview/index.html"/>
-    <id>http://www.chsong.live/NWPUReview/index.html</id>
+    <link href="http://www.chsong.live/20171226_NWPUReview/index.html"/>
+    <id>http://www.chsong.live/20171226_NWPUReview/index.html</id>
     <published>2017-12-26T06:25:00.000Z</published>
     <updated>2017-12-26T06:25:00.000Z</updated>
     
@@ -115,8 +115,8 @@
   
   <entry>
     <title>支持向量机(SVM)</title>
-    <link href="http://www.chsong.live/SVM/index.html"/>
-    <id>http://www.chsong.live/SVM/index.html</id>
+    <link href="http://www.chsong.live/20171014_SVM/index.html"/>
+    <id>http://www.chsong.live/20171014_SVM/index.html</id>
     <published>2017-10-14T04:18:00.000Z</published>
     <updated>2017-10-14T04:18:00.000Z</updated>
     
