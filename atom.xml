@@ -31,9 +31,9 @@
     
     
     
-      <category term="动态" scheme="http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/"/>
-    
       <category term="随笔" scheme="http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="动态" scheme="http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/"/>
     
   </entry>
   
@@ -51,6 +51,8 @@
     </summary>
     
     
+    
+      <category term="算法" scheme="http://www.chsong.live/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="牛客网" scheme="http://www.chsong.live/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/"/>
     
@@ -71,12 +73,14 @@
     
     
     
+      <category term="算法" scheme="http://www.chsong.live/tags/%E7%AE%97%E6%B3%95/"/>
+    
       <category term="牛客网" scheme="http://www.chsong.live/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/"/>
     
   </entry>
   
   <entry>
-    <title>北京参加CIKM会议</title>
+    <title>参加CIKM会议</title>
     <link href="http://www.chsong.live/20191107_CIKM/index.html"/>
     <id>http://www.chsong.live/20191107_CIKM/index.html</id>
     <published>2019-11-07T13:49:28.000Z</published>
@@ -97,7 +101,7 @@
   </entry>
   
   <entry>
-    <title>北大、清华、南大、中科大夏令营经验总结</title>
+    <title>保研夏令营经验总结</title>
     <link href="http://www.chsong.live/20190428_SummerCamp/index.html"/>
     <id>http://www.chsong.live/20190428_SummerCamp/index.html</id>
     <published>2019-04-18T12:30:00.000Z</published>
@@ -116,7 +120,7 @@
   </entry>
   
   <entry>
-    <title>大学生活的回顾</title>
+    <title>大学生活回顾</title>
     <link href="http://www.chsong.live/20171226_NWPUReview/index.html"/>
     <id>http://www.chsong.live/20171226_NWPUReview/index.html</id>
     <published>2017-12-26T06:25:00.000Z</published>
@@ -130,12 +134,12 @@
     
     
     
-      <category term="动态" scheme="http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/"/>
+      <category term="随笔" scheme="http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title>支持向量机(SVM)</title>
+    <title>支持向量机</title>
     <link href="http://www.chsong.live/20171014_SVM/index.html"/>
     <id>http://www.chsong.live/20171014_SVM/index.html</id>
     <published>2017-10-14T04:18:00.000Z</published>
@@ -151,6 +155,8 @@
     
     
       <category term="机器学习" scheme="http://www.chsong.live/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="算法" scheme="http://www.chsong.live/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

@@ -13,8 +13,8 @@
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
-        <tag>动态</tag>
         <tag>随笔</tag>
+        <tag>动态</tag>
       </tags>
   </entry>
   <entry>
@@ -74,6 +74,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dim = list(map(int, input().split()))</span><br><span class="line"><span class="keyword">if</span> len(dim) == <span class="number">2</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = dim[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = int(input())</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
+        <tag>算法</tag>
         <tag>牛客网</tag>
       </tags>
   </entry>
@@ -116,11 +117,12 @@
 <h4 id="贪心策略"><a href="#贪心策略" class="headerlink" title="贪心策略"></a>贪心策略</h4><p>待续…</p>
 ]]></content>
       <tags>
+        <tag>算法</tag>
         <tag>牛客网</tag>
       </tags>
   </entry>
   <entry>
-    <title>北京参加CIKM会议</title>
+    <title>参加CIKM会议</title>
     <url>/20191107_CIKM/index.html</url>
     <content><![CDATA[<p>第一次参加国际会议，初来乍到</p>
 <p>太难了，紧张得不要不要的</p>
@@ -156,7 +158,7 @@
       </tags>
   </entry>
   <entry>
-    <title>北大、清华、南大、中科大夏令营经验总结</title>
+    <title>保研夏令营经验总结</title>
     <url>/20190428_SummerCamp/index.html</url>
     <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>从关注夏令营到夏令营结束，花了好长的时间，这学期的课也没有选多少就是为了准备夏令营，参加了四个夏令营，“”旅游“将近二十天，天天在外面跑晒黑了不少（今年气温贼高，大多40度以上）。7月4号到7月6号参加北京大学前沿交叉学科研究院（以下称“叉院”）的夏令营，7月7号都7月9号参加清华大学计算机学院的夏令营，7月13号到7月16号参加南京大学计算机学院夏令营，最后一个7月17号到7月23号参加中国科学技术大学计算机学院夏令营。最终中科大offer确定！</p>
 <a id="more"></a>
@@ -201,7 +203,7 @@
       </tags>
   </entry>
   <entry>
-    <title>大学生活的回顾</title>
+    <title>大学生活回顾</title>
     <url>/20171226_NWPUReview/index.html</url>
     <content><![CDATA[<p>从来都不喜欢写作文之类的东西，主要是因为文笔不好，因此对于这方面没有兴趣，经常希望能有机会对自己过去的一段时间所做的和所经历的事情做一些回顾和总结。转眼就2018年了，前两天大家还都在考研，虽然我不考，但是我也有些小兴奋。。。最近一个月左右也过的很无聊，除了准备一下毕设的一些事情之外似乎也无所事事，今天下午同样是无聊，因此借此机会对过去的大学四年简单的总结一下。</p>
 <a id="more"></a>
@@ -212,11 +214,11 @@
 <p> 不管怎样，已经过去的无法在改变了，目前能做的就是最好未来的规划，也许还会同样的不完美，能做出一些改变也是好的。最近过的太悠闲，生活很没规律无所事事，也有一些事情比较纠结，总喜欢胡思乱想，希望能在元旦回去之后调整一下自己，希望在研究生阶段能弥补一些大学的遗憾，最起码要锻炼身体，其余的事再说，感觉我现在就开始讨价还价了。。。这样好像不好，希望不要给自己打脸，我看好我。最近有些颓废，马上就2018年了又老了一岁，希望自己写的这个垃圾文章能够警醒一下自己，革命尚未成功，仍需努力。fighting！！！</p>
 ]]></content>
       <tags>
-        <tag>动态</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
-    <title>支持向量机(SVM)</title>
+    <title>支持向量机</title>
     <url>/20171014_SVM/index.html</url>
     <content><![CDATA[<p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507893605639&di=16fad19f6589ac2b2dc8cd4c7d74f1f3&imgtype=0&src=http%3A%2F%2Fsigvc.org%2Fwhy%2Fbook%2F3dp%2Fpaste2.files%2Fimage004.jpg" alt=""></p>
 <p>支持向量机（SVM）是一个非常好的监督学习算法，由于这个算法涉及到的数学知识比较多，而且不容易弄懂，因此我额外补了一些拉格朗日对偶性的一些知识，还初步了解了以下凸优化的相关知识，建议如过想学SVM的先去学一些拉格朗日对偶问题以及一些凸优化的相关东西。终于能大致弄懂SVM的整个过程中所涉及到的一些东西，但是仍有一些地方还是不太明白，还有待继续学习。这里先对所掌握的过程进行回顾总结。</p>
@@ -245,6 +247,7 @@
 ]]></content>
       <tags>
         <tag>机器学习</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
 </search>
