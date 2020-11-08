@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.chsong.live/gallery/%E5%90%88%E8%82%A5%E5%8C%85%E5%85%AC%E7%A5%A0/index.html</loc>
+    
+    <lastmod>2020-11-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.chsong.live/20201103_%E5%86%8D%E8%A7%81/index.html</loc>
     
     <lastmod>2020-11-05</lastmod>
@@ -37,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://www.chsong.live/gallery/CQQ/index.html</loc>
+    <loc>http://www.chsong.live/gallery/CIKM19/index.html</loc>
     
     <lastmod>2020-09-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.chsong.live/gallery/CIKM19/index.html</loc>
+    <loc>http://www.chsong.live/gallery/CQQ/index.html</loc>
     
     <lastmod>2020-09-27</lastmod>
     
@@ -109,43 +116,43 @@
 
   <url>
     <loc>http://www.chsong.live/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <loc>http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2020-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.chsong.live/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.chsong.live/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/</loc>
+    <lastmod>2020-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.chsong.live/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/</loc>
-    <lastmod>2020-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
