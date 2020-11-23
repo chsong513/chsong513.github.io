@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>http://www.chsong.live/20191120_%E8%AE%A4%E7%9F%A5%E8%AF%8A%E6%96%AD%E4%B8%8E%E7%9F%A5%E8%AF%86%E8%BF%BD%E8%B8%AA/index.html</loc>
-    
-    <lastmod>2020-11-20</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.chsong.live/gallery/%E5%90%88%E8%82%A5%E5%8C%85%E5%85%AC%E7%A5%A0/index.html</loc>
     
     <lastmod>2020-11-08</lastmod>
@@ -144,13 +137,6 @@
 
   
   <url>
-    <loc>http://www.chsong.live/tags/%E7%A7%91%E7%A0%94/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.chsong.live/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
@@ -159,6 +145,13 @@
   
   <url>
     <loc>http://www.chsong.live/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.chsong.live/tags/%E7%A7%91%E7%A0%94/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

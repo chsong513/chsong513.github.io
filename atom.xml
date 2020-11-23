@@ -57,25 +57,6 @@
   </entry>
   
   <entry>
-    <title>认知诊断与知识追踪</title>
-    <link href="http://www.chsong.live/20191120_%E8%AE%A4%E7%9F%A5%E8%AF%8A%E6%96%AD%E4%B8%8E%E7%9F%A5%E8%AF%86%E8%BF%BD%E8%B8%AA/index.html"/>
-    <id>http://www.chsong.live/20191120_%E8%AE%A4%E7%9F%A5%E8%AF%8A%E6%96%AD%E4%B8%8E%E7%9F%A5%E8%AF%86%E8%BF%BD%E8%B8%AA/index.html</id>
-    <published>2020-11-20T11:44:21.000Z</published>
-    <updated>2020-11-20T11:44:21.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;…&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="科研" scheme="http://www.chsong.live/tags/%E7%A7%91%E7%A0%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title>再见</title>
     <link href="http://www.chsong.live/20201103_%E5%86%8D%E8%A7%81/index.html"/>
     <id>http://www.chsong.live/20201103_%E5%86%8D%E8%A7%81/index.html</id>
@@ -213,11 +194,11 @@
     
     
     
-      <category term="科研" scheme="http://www.chsong.live/tags/%E7%A7%91%E7%A0%94/"/>
-    
       <category term="机器学习" scheme="http://www.chsong.live/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="算法" scheme="http://www.chsong.live/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="科研" scheme="http://www.chsong.live/tags/%E7%A7%91%E7%A0%94/"/>
     
   </entry>
   
