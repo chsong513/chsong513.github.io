@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.chsong.live/"/>
-  <updated>2020-11-23T11:20:06.000Z</updated>
+  <updated>2020-11-23T11:39:33.000Z</updated>
   <id>http://www.chsong.live/</id>
   
   <author>
@@ -17,6 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>游戏实时胜率预测</title>
+    <link href="http://www.chsong.live/20201123_%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/index.html"/>
+    <id>http://www.chsong.live/20201123_%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/index.html</id>
+    <published>2020-11-23T11:39:33.000Z</published>
+    <updated>2020-11-23T11:39:33.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/winprob.png-o&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在游戏过程中进行实时胜率预测，能够为观战者、解说提供话题引导和需求。实时胜率预测系统目前 在游戏赛事的观战直播领域已经出现一些应用尝试。肯德基KI上校、DOTA PLUS胜率预测面板，已经在LOL和DOTA玩家中取得了良好的反馈。通过战斗的实时胜率预测，不仅可以制造话题为比赛带来乐趣，也可以通过事后回顾，分析对局中的得失，提升竞技实力，对游戏玩法参与感和体验，是一种革新。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="科研" scheme="http://www.chsong.live/tags/%E7%A7%91%E7%A0%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>智能化教育与隐私保护</title>
     <link href="http://www.chsong.live/20201123_%E6%99%BA%E8%83%BD%E5%8C%96%E6%95%99%E8%82%B2%E4%B8%8E%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/index.html"/>
     <id>http://www.chsong.live/20201123_%E6%99%BA%E8%83%BD%E5%8C%96%E6%95%99%E8%82%B2%E4%B8%8E%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/index.html</id>
@@ -25,7 +45,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;人工智能不仅是一场技术革命和产业革命，更是一场数据革命。为了不断提升智能化水平，必定有越来越多的数据被收集。
+      &lt;p&gt;&lt;img src=&quot;https://imgs.ebrun.com/resources/2018_01/2018_01_09/2018010914915154810164470.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;人工智能不仅是一场技术革命和产业革命，更是一场数据革命。为了不断提升智能化水平，必定有越来越多的数据被收集。
     
     </summary>
     
