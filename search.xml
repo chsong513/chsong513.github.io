@@ -51,6 +51,31 @@
 <td align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/17.png-m" alt=""></td>
 </tr>
 </tbody></table>
+<h3 id="我们的工作"><a href="#我们的工作" class="headerlink" title="我们的工作"></a>我们的工作</h3><p>我们的工作主要是基于逆水寒游戏数据，研究实时胜率预测模型。所作的工作主要包括三个步骤，首先基于shapely value对数据进行了分析，分析游戏中不同角色的数量对游戏结果的影响；然后采用LR、XGboost等方法进行实时胜率预测实验，效果挺好，但是可解释性不足。后来将数据处理成图片形式，还原游戏对局原貌，采用CNN实现胜率预测，并通过热力图提供强解释性。</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/18.png-m" alt=""></th>
+<th align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/19.png-m" alt=""></th>
+<th align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/20.png-m" alt=""></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/21.png-m" alt=""></td>
+<td align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/22.png-m" alt=""></td>
+<td align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/23.png-m" alt=""></td>
+</tr>
+</tbody></table>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>最后总结了一下基于游戏实时胜率预测的可能的研究方向，主要包括：关键点识别、高光时刻检测、实时胜率的可解释性、战报自动生成、战场数据表征等。</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/24.png-m" alt=""></th>
+<th align="center"><img src="https://img.chsong.live/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/25.png-m" alt=""></th>
+</tr>
+</thead>
+</table>
+<p>原ppt可以在<a href="http://chengsong-img.oss-cn-hangzhou.aliyuncs.com/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/20201015%E5%A4%A7%E5%88%86%E4%BA%AB%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B.pptx" target="_blank" rel="noopener">此处</a>下载。</p>
 ]]></content>
       <tags>
         <tag>科研</tag>
@@ -321,9 +346,9 @@
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>此次总结对之前学的支持向量机的相关知识进行了一次回顾，支持向量机结合核技巧是一个非常好的学习算法，它利用了拉格朗日问题的对偶性，将原问题转换为对偶问题，因为可能存在一种情况是每个样本的属性非常的多，也就是输入空间的维数非常的大，而转换为对偶问题之后，参数是和样本一一对应的，因此参数数目就是样本的数目，这能够大大减小计算的复杂度，最后对于求解凸二次规划问题有十分有效的SMO算法，因为子问题有解析解，因此每次计算子问题都十分的快，虽然子问题数目多，但是总体上看来还是很快的。</p>
 ]]></content>
       <tags>
+        <tag>科研</tag>
         <tag>机器学习</tag>
         <tag>算法</tag>
-        <tag>科研</tag>
       </tags>
   </entry>
 </search>
