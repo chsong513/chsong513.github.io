@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>智能化教育与隐私保护</title>
+    <url>/20201123_%E6%99%BA%E8%83%BD%E5%8C%96%E6%95%99%E8%82%B2%E4%B8%8E%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/index.html</url>
+    <content><![CDATA[<p>人工智能不仅是一场技术革命和产业革命，更是一场数据革命。为了不断提升智能化水平，必定有越来越多的数据被收集。<a id="more"></a>在智能教育领域，学习者等相关的主体都已被卷入这场声势浩大的数据革命之中。如何在发展智能教育的同时，实现对学习者数据在存储、共享、使用过程中隐私的保护，必定会成为智能教育时代的主题。目前，智能教育和隐私保护之间的平衡性仍处于基础设想阶段。本人及课题组基于教育领域的数据特征，结合隐私保护相关法律法规、伦理道德，界定不同的隐私及隐私程度；从智能教育实施的整个流程所涉及的数据采集、存储与传输、共享与使用等环节来分析隐私泄露的可能性，同时研究具体的实现隐私保护的相关技术。研究结果对于合理发挥教育数据的价值进而提升智能教育水平具有重要意义；为教育的公平性、相关立法、教育领域大数据防火墙的构筑等提供了新的指导。</p>
+]]></content>
+      <tags>
+        <tag>科研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认知诊断与知识追踪</title>
+    <url>/20191120_%E8%AE%A4%E7%9F%A5%E8%AF%8A%E6%96%AD%E4%B8%8E%E7%9F%A5%E8%AF%86%E8%BF%BD%E8%B8%AA/index.html</url>
+    <content><![CDATA[<p>…</p>
+<a id="more"></a>]]></content>
+      <tags>
+        <tag>科研</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>再见</title>
     <url>/20201103_%E5%86%8D%E8%A7%81/index.html</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -248,6 +266,7 @@
       <tags>
         <tag>机器学习</tag>
         <tag>算法</tag>
+        <tag>科研</tag>
       </tags>
   </entry>
 </search>
