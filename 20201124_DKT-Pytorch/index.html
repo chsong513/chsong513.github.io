@@ -137,12 +137,20 @@
 <p>git clone <a href="https://github.com/chsong513/DeepKnowledgeTracing-DKT-Pytorch.git" target="_blank" rel="noopener">https://github.com/chsong513/DeepKnowledgeTracing-DKT-Pytorch.git</a></p>
 </blockquote>
 <p>具体运行和使用方法参考GitHub项目上ReadMe。</p>
-<h3 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h3><p>在DKT文件夹下包括两个文件夹：KTDataset和KnowledgeTracing。</p>
-<p><img src="http://img.chsong.live/Blogs/DKT-pytorch/2.png-m" alt=""></p>
+<h3 id="项目结构-DKT"><a href="#项目结构-DKT" class="headerlink" title="项目结构-DKT"></a>项目结构-DKT</h3><p>在DKT文件夹下包括两个文件夹：KTDataset和KnowledgeTracing。</p>
+<p><img src="http://img.chsong.live/Blogs/DKT-pytorch/2.png-o" alt=""></p>
+<h4 id="数据集-KTDataset"><a href="#数据集-KTDataset" class="headerlink" title="数据集-KTDataset"></a>数据集-KTDataset</h4><p><img src="http://img.chsong.live/Blogs/DKT-pytorch/4.png-o" alt=""></p>
 <p>KTDataset文件夹下有6个常用的知识追踪数据集，数据都已经处理成三行格式：</p>
 <blockquote>
 <p>第一行：答题数<br>第二行：题目编号<br>第三行：答题结果，0表示错，1表示对</p>
 </blockquote>
+<p>举例：<br><img src="http://img.chsong.live/Blogs/DKT-pytorch/3.png-o" alt=""></p>
+<h4 id="模型结构-KnowledgeTracing"><a href="#模型结构-KnowledgeTracing" class="headerlink" title="模型结构-KnowledgeTracing"></a>模型结构-KnowledgeTracing</h4><p><img src="http://img.chsong.live/Blogs/DKT-pytorch/5.png-o" alt=""></p>
+<p>模型的整个流程都在KnowledgeTracing目录下，包括模型、参数设置、数据处理、模型训练和评估，分别在四个子目录下：model， Constant，data，evaluation。</p>
+<h5 id="参数设置-Constant"><a href="#参数设置-Constant" class="headerlink" title="参数设置-Constant"></a>参数设置-Constant</h5><p>Constant下主要设置一些参数和超参数，超参数也分为四大块：数据集存储路径、数据集、题目数、模型超参数。</p>
+<h6 id="数据集存储路径"><a href="#数据集存储路径" class="headerlink" title="数据集存储路径"></a>数据集存储路径</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dpath = <span class="string">'../../KTDataset'</span></span><br></pre></td></tr></table></figure>
+<p><strong>数据集</strong><br>一共包括</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">datasets = &#123;</span><br><span class="line">    <span class="string">'assist2009'</span> : <span class="string">'assist2009'</span>,</span><br><span class="line">    <span class="string">'assist2015'</span> : <span class="string">'assist2015'</span>,</span><br><span class="line">    <span class="string">'assist2017'</span> : <span class="string">'assist2017'</span>,</span><br><span class="line">    <span class="string">'static2011'</span> : <span class="string">'static2011'</span>,</span><br><span class="line">    <span class="string">'kddcup2010'</span> : <span class="string">'kddcup2010'</span>,</span><br><span class="line">    <span class="string">'synthetic'</span> : <span class="string">'synthetic'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	  
 
