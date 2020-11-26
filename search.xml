@@ -60,7 +60,7 @@
 <p>每一个ques的长度处理成maxstep的整数倍之后，添加到trainques数组中去，这样每一次添加都保证了trainques的长度为maxstep的整数倍。ans以及trainans的处理过程一样。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">trainqus = np.append(trainqus, ques).astype(np.int)</span><br><span class="line">trainans = np.append(trainans, ans).astype(np.int)</span><br></pre></td></tr></table></figure>
 <p>最后对trainques和trainans进行reshape，处理成N*maxstep的矩阵形式，N即可看做学生个数。maxstep即为答题个数。</p>
-<p>举例，数据形式的变化过程，比如设置maxstep为3，总题目数为5，现在有如下三个学生的原始答题记录：<br><strong>学生1：</strong><br>2<br>1 2<br>1 0<br><strong>学生2：</strong><br>4<br>2 4 1 3<br>0 1 1 0<br><strong>学生3：</strong><br>7<br>5 3 1 4 5 4 2<br>0 0 1 1 0 1 0</p>
+<p>举例，数据形式的变化过程，比如设置maxstep为3，总题目数为5，现在有如下三个学生的原始答题记录：<br>学生1：<br>2<br>1 2<br>1 0<br>学生2：<br>4<br>2 4 1 3<br>0 1 1 0<br>学生3：<br>7<br>5 3 1 4 5 4 2<br>0 0 1 1 0 1 0</p>
 <p>ques通过readata读取并处理之后会变成：<br>1 2 0<br>2 4 1<br>3 0 0<br>5 3 1<br>4 5 4<br>2 0 0</p>
 <p>DKTDataSet：要定义pytorch框架下的数据集，需要继承torch的Dataset类，覆写<strong>init</strong>、<strong>len</strong>以及<strong>getitem</strong>三个函数。还可以根据需要自己添加数据处理的函数，在DKTDataSet中添加的one-hot处理函数。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DKTDataSet</span><span class="params">(Dataset)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, ques, ans)</span>:</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">onehot</span><span class="params">(self, questions, answers)</span>:</span></span><br><span class="line">        ...</span><br></pre></td></tr></table></figure>
@@ -188,8 +188,8 @@
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>动态</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -249,8 +249,8 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dim = list(map(int, input().split()))</span><br><span class="line"><span class="keyword">if</span> len(dim) == <span class="number">2</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = dim[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = int(input())</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>算法</tag>
         <tag>牛客网</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -292,8 +292,8 @@
 <h3 id="贪心策略"><a href="#贪心策略" class="headerlink" title="贪心策略"></a>贪心策略</h3><p>待续…</p>
 ]]></content>
       <tags>
-        <tag>算法</tag>
         <tag>牛客网</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -421,8 +421,8 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此次总结对之前学的支持向量机的相关知识进行了一次回顾，支持向量机结合核技巧是一个非常好的学习算法，它利用了拉格朗日问题的对偶性，将原问题转换为对偶问题，因为可能存在一种情况是每个样本的属性非常的多，也就是输入空间的维数非常的大，而转换为对偶问题之后，参数是和样本一一对应的，因此参数数目就是样本的数目，这能够大大减小计算的复杂度，最后对于求解凸二次规划问题有十分有效的SMO算法，因为子问题有解析解，因此每次计算子问题都十分的快，虽然子问题数目多，但是总体上看来还是很快的。</p>
 ]]></content>
       <tags>
-        <tag>机器学习</tag>
         <tag>算法</tag>
+        <tag>机器学习</tag>
         <tag>科研</tag>
       </tags>
   </entry>
