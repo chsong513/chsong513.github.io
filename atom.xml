@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Deep Knowledge Tracing [CODE]</title>
+    <title>Deep Knowledge Tracing [Pytorch]</title>
     <link href="http://www.chsong.live/20201124_DKT-Pytorch/index.html"/>
     <id>http://www.chsong.live/20201124_DKT-Pytorch/index.html</id>
     <published>2020-11-24T10:12:17.000Z</published>
@@ -93,9 +93,9 @@
     
     
     
-      <category term="动态" scheme="http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/"/>
-    
       <category term="随笔" scheme="http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="动态" scheme="http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/"/>
     
   </entry>
   
