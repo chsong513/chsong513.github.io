@@ -406,8 +406,8 @@ END</code></pre>]]></content>
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>动态</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -467,8 +467,8 @@ END</code></pre>]]></content>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dim = list(map(int, input().split()))</span><br><span class="line"><span class="keyword">if</span> len(dim) == <span class="number">2</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = dim[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = int(input())</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>算法</tag>
         <tag>牛客网</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -510,8 +510,8 @@ END</code></pre>]]></content>
 <h3 id="贪心策略"><a href="#贪心策略" class="headerlink" title="贪心策略"></a>贪心策略</h3><p>待续…</p>
 ]]></content>
       <tags>
-        <tag>算法</tag>
         <tag>牛客网</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -639,8 +639,8 @@ END</code></pre>]]></content>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此次总结对之前学的支持向量机的相关知识进行了一次回顾，支持向量机结合核技巧是一个非常好的学习算法，它利用了拉格朗日问题的对偶性，将原问题转换为对偶问题，因为可能存在一种情况是每个样本的属性非常的多，也就是输入空间的维数非常的大，而转换为对偶问题之后，参数是和样本一一对应的，因此参数数目就是样本的数目，这能够大大减小计算的复杂度，最后对于求解凸二次规划问题有十分有效的SMO算法，因为子问题有解析解，因此每次计算子问题都十分的快，虽然子问题数目多，但是总体上看来还是很快的。</p>
 ]]></content>
       <tags>
-        <tag>机器学习</tag>
         <tag>算法</tag>
+        <tag>机器学习</tag>
         <tag>科研</tag>
       </tags>
   </entry>
