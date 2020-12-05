@@ -25,13 +25,8 @@
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;https://img.chsong.live/Blogs/JDA/1.png-s&quot;
-        
-      
+      &lt;p&gt;&lt;img src=&quot;https://img.chsong.live/Blogs/JDA/1.png-s&quot; alt=&quot;JDA&quot;&gt;&lt;/p&gt;
+&lt;p&gt;JDA方法首次发表于2013年的ICCV（计算机视觉领域顶会，与CVPR类似），它的作者是清华大学的博士生（现为清华大学助理教授）龙明盛。联合分布适配方法（joint distribution adaptation,JDA）解决的也是迁移学习中一类很大的问题：domain adaptation。&lt;/p&gt;
     
     </summary>
     
