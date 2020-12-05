@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PCA与SVD之间的关系</title>
+    <url>/20201205_PCA%E4%B8%8ESVD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/index.html</url>
+    <content><![CDATA[<p><img src="http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/1.png-s" alt="PCA"></p>
+<p>在用数据对模型进行训练时，通常会遇到维度过高，也就是数据的特征太多的问题，有时特征之间还存在一定的相关性，这时如果还使用原数据训练模型，模型的精度会大大下降，因此要降低数据的维度，同时新数据的特征之间还要保持线性无关。有一种方法称为主成分分析（Principal component analysis，PCA），新数据的特征称为主成分，得到主成分的方法有两种：直接对协方差矩阵进行特征值分解和对数据矩阵进行奇异值分解（SVD）。</p>
+<a id="more"></a>
+
+<h2 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h2><p>一种经典的数据降维算法，推导过程有多种形式：最近重构性、最大可区分性等。这里以最大可区分性为例。</p>
+<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>设$X\in R^{n\times d} = {x_1, x_2,\dots, x_n}$为数据集，包含$n$个样本，每个样本有$d$维特征, 即$x_i\in R^{d}$。</p>
+<h3 id="降维可视化"><a href="#降维可视化" class="headerlink" title="降维可视化"></a>降维可视化</h3><p><img src="http://jupter-oss.oss-cn-hangzhou.aliyuncs.com/public/files/image/1095279401413/1576909454842_sVWwhScNGQ.jpg" alt=""></p>
+<p>降维的目的，是为了找到一个映射矩阵$W\in R^{k\times d}$,将原始数据都映射到d维空间中。</p>
+<p>如图所示，以2维空间到1维空间降维为例。原数据在直线上的映射点的位置之与直线的斜率（或者说是方向向量）有关，且直线是可以平移的。因此我们假设目标直线是过原点的，即：$Wx = 0$。</p>
+<h3 id="W求解过程"><a href="#W求解过程" class="headerlink" title="W求解过程"></a>W求解过程</h3><p>每一个数据点$x_i$映射到直线$Wx=0$上之后，映射点为：$Wx_i$</p>
+<p>那么数据集$X$映射后的数据为:$XW^T\in R^{n\times k}$</p>
+<p>step1: 映射矩阵$W\in R^{k\times d}$将数据集$X$映射到$k$维空间：$XW^{T}$</p>
+<p>step2: 映射后，数据的协方差矩阵为：$(XW^{T})^{T}(XW^{T})=WX^{T}XW^{T}$</p>
+<p>最大可区分性，就是使得数据在各个维度上的方差最大，也就是数据最分散，越分散区分性越大。因此最大可区分性的优化目标就是，数据集在各位维度上的方差最大化。而各个维度的方差等于协方差矩阵的对角元素之和，也就是矩阵的迹。</p>
+<p>step3: 因此优化目标：$min \text{tr}(WX^{T}XW^{T}), s.t. WW^T = I$</p>
+<p>step4: 拉格朗日法求解，可得：$X^TXW^T = \lambda W$</p>
+<p>$W$的解为矩阵$X^TX$的特征向量。</p>
+<h3 id="与SVD的关系"><a href="#与SVD的关系" class="headerlink" title="与SVD的关系"></a>与SVD的关系</h3><p>奇异值分解，对于矩阵X，其奇异值分解为: $X = U\Sigma V^T$</p>
+<p>而矩阵$X^TX = (U\Sigma V)^TU\Sigma V^T = V\Sigma U^TU\Sigma V^T = V\Sigma^2 V^T$</p>
+<p>因此矩阵$X^TX$的特征值构成的矩阵$V$即为矩阵$X$奇异值分解后的右特征矩阵。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">iris = datasets.load_iris()</span><br><span class="line">X = iris[<span class="string">'data'</span>]</span><br><span class="line">Y = iris[<span class="string">'target'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'''normalization mean = 0, std = 1'''</span></span><br><span class="line">X_normed = (X - X.mean(axis=<span class="number">0</span>)) / X.std(axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">'''SVD of X_normed'''</span></span><br><span class="line">U, Sigma, VT = np.linalg.svd(X_normed)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'''take the vector from V'''</span></span><br><span class="line">W = VT.T[:<span class="number">2</span>,:]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'''conduct PCA 降维'''</span></span><br><span class="line">X_pca = X_normed.dot(W.T)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'''visualization'''</span></span><br><span class="line">plt.scatter(X_pca[:,<span class="number">0</span>],X_pca[:,<span class="number">1</span>], c=Y)</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/2.png-s" alt="png"></p>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+        <tag>科研</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Transfer Component Analyze (TCA)</title>
     <url>/20201205_TCA/index.html</url>
     <content><![CDATA[<p><img src="http://img.chsong.live/Blogs/TCA/1.png-s" alt="TCA"></p>
