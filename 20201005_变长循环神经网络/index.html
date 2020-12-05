@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   <style>
+      .left {
+        float: left;
+        width: 300px;
+      }
+      .right {
+        float: right;
+        margin-left: 300px;
+      }
+      a{TEXT-DECORATION:none}
+      a:hover{TEXT-DECORATION:underline}
+
+      .rotate {
+
+        -webkit-transition: -webkit-transform 2s;
+      }
+
+      .rotate:hover {
+        -webkit-transform: rotate(360deg);
+      }
+
+      .tag-list-link {
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        background-color: #5d5a5a;
+        color: #fff;
+        box-shadow: 0 3px 5px rgba(0,0,0,.12);
+        transition: .2s;
+      }
+
+      .article-meta{
+        display: flex;
+        color: #5c6b72;
+      }
+
+</style>
+
+
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    变长循环神经网络 [Pytorch] |  心有暖阳
+  </title>
+  
+  <link rel="shortcut icon" href="/logo.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+<script src="/js/clicklove.js"></script>
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+  
+  
+
+  
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="心有暖阳" type="application/atom+xml">
+</head>
+
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-20201005_变长循环神经网络" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  变长循环神经网络 [Pytorch]
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/20201005_%E5%8F%98%E9%95%BF%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html" class="article-date">
+  <time datetime="2020-12-05T08:08:00.000Z" itemprop="datePublished">2020-12-05</time>&nbsp;&nbsp;&nbsp;
+
+<!--   
+        作者: 香蕉不娇、芒果不盲
+   -->
+
+</a>
+
+      
+    </div>
+    
+
+    
+    
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><img src="https://img.chsong.live/Blogs/%E5%8F%98%E9%95%BF%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/1.png-s" alt="LSTM"><br>在使用循环神经网络时，经常碰到可变长数据，就是每一个样本的时间步是不一样的。这里总结一下pytorch里面的处理方法。</p>
+<a id="more"></a>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''导入相关包'''</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.utils.rnn <span class="keyword">as</span> rnn_utils</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line"><span class="keyword">import</span> torch.utils.data <span class="keyword">as</span> data</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">人工给出一小部分数据做示例</span></span><br><span class="line"><span class="string">这里，一共包含7个数据样本，每个样本的长度不一样，分别是:7,6,5,...,1</span></span><br><span class="line"><span class="string">数据的维度为1维</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">train_x = [torch.Tensor([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]),</span><br><span class="line">           torch.Tensor([<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>]),</span><br><span class="line">           torch.Tensor([<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>]),</span><br><span class="line">           torch.Tensor([<span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>]),</span><br><span class="line">           torch.Tensor([<span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>]),</span><br><span class="line">           torch.Tensor([<span class="number">6</span>, <span class="number">6</span>]),</span><br><span class="line">           torch.Tensor([<span class="number">7</span>])]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">长度不一样，在代码中没法处理，因此必须将短的数据增长到与最长的数据长度一样</span></span><br><span class="line"><span class="string">一般都是补0，在pytorch里面有专门的函数: pad_sequence</span></span><br><span class="line"><span class="string">这样一来，数据将变为：</span></span><br><span class="line"><span class="string">[torch.Tensor([1, 1, 1, 1, 1, 1, 1]),</span></span><br><span class="line"><span class="string"> torch.Tensor([2, 2, 2, 2, 2, 2, 0]),</span></span><br><span class="line"><span class="string"> torch.Tensor([3, 3, 3, 3, 3, 0, 0]),</span></span><br><span class="line"><span class="string"> torch.Tensor([4, 4, 4, 4, 0, 0, 0]),</span></span><br><span class="line"><span class="string"> torch.Tensor([5, 5, 5, 0, 0, 0, 0]),</span></span><br><span class="line"><span class="string"> torch.Tensor([6, 6, 0, 0, 0, 0, 0]),</span></span><br><span class="line"><span class="string"> torch.Tensor([7, 0, 0, 0, 0, 0, 0])]</span></span><br><span class="line"><span class="string"> 这里我们只是给出例子，看看pad_sequence的作用，为了能够训练模型，需要将其封装到数据集Dataset里面，方便DataLoader</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">x = rnn_utils.pad_sequence(train_x, batch_first=<span class="literal">True</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor([[ 1.,  1.,  1.,  1.,  1.,  1.,  1.],
+        [ 2.,  2.,  2.,  2.,  2.,  2.,  0.],
+        [ 3.,  3.,  3.,  3.,  3.,  0.,  0.],
+        [ 4.,  4.,  4.,  4.,  0.,  0.,  0.],
+        [ 5.,  5.,  5.,  0.,  0.,  0.,  0.],
+        [ 6.,  6.,  0.,  0.,  0.,  0.,  0.],
+        [ 7.,  0.,  0.,  0.,  0.,  0.,  0.]])</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">封装到数据集MyData</span></span><br><span class="line"><span class="string">实际上是定义了一个collate_fn函数，它是用来控制在DataLoader中，load数据的时候，返回数据的格式</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyData</span><span class="params">(data.Dataset)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data_seq)</span>:</span></span><br><span class="line">        self.data_seq = data_seq</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.data_seq)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, idx)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.data_seq[idx]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">collate_fn</span><span class="params">(data)</span>:</span></span><br><span class="line">    data.sort(key=<span class="keyword">lambda</span> x: len(x), reverse=<span class="literal">True</span>) <span class="comment">#将数据按数据长度从大到小排列</span></span><br><span class="line">    data_length = [len(sq) <span class="keyword">for</span> sq <span class="keyword">in</span> data]</span><br><span class="line">    data = rnn_utils.pad_sequence(data, batch_first=<span class="literal">True</span>, padding_value=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> data.unsqueeze(<span class="number">-1</span>), data_length <span class="comment">#这里的unsqueeze是为了将数据从7x7变为7x7x1，符合模型的输入数据格式，共7个样本，维度为1，pad之后的"长度"为7</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">测试</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    </span><br><span class="line">    data = MyData(train_x) <span class="comment">#将原始数据通过MyData封装</span></span><br><span class="line">    </span><br><span class="line">    data_loader = DataLoader(data, batch_size=<span class="number">3</span>, shuffle=<span class="literal">True</span>,collate_fn=collate_fn) <span class="comment">#封装进DataLoader，通过collate_fn控制返回数据的格式，即对每一个样本都进行pad</span></span><br><span class="line">    </span><br><span class="line">    batch_x, batch_x_len = iter(data_loader).next()</span><br><span class="line">    </span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    这里batch_size=3，因此batch_x的格式为：</span></span><br><span class="line"><span class="string">    [[[ 1.],  [1.],  [1.],  [1.],  [1.],  [1.],  [1.]],</span></span><br><span class="line"><span class="string">     [[ 3.],  [3.],  [3.],  [3.],  [3.],  [0.],  [0.]],</span></span><br><span class="line"><span class="string">     [[ 6.],  [6.],  [0.],  [0.],  [0.],  [0.],  [0.]]]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    为了不让后面的0参与运算，即运算完所有的非0数据后就停止</span></span><br><span class="line"><span class="string">    pytorch里面需要对batch_x进行pack，即压缩</span></span><br><span class="line"><span class="string">    压缩后的数据格式，以及为设么这么压缩，和pytorch里面循环神经网络的工作原理有关，这里不做详细介绍</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    </span><br><span class="line">    batch_x_pack = rnn_utils.pack_padded_sequence(batch_x, batch_x_len, batch_first=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    构建模型，初始化h0,c0</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    net = nn.LSTM(<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>, batch_first=<span class="literal">True</span>)</span><br><span class="line">    h0 = torch.rand(<span class="number">2</span>, <span class="number">3</span>, <span class="number">10</span>)</span><br><span class="line">    c0 = torch.rand(<span class="number">2</span>, <span class="number">3</span>, <span class="number">10</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="string">'''通过LSTM计算'''</span></span><br><span class="line">    out, (h1, c1) = net(batch_x_pack, (h0, c0))</span><br><span class="line">    </span><br><span class="line">    <span class="string">'''这里，模型输出的数据和输入的数据格式一样，都是被压缩过的，这里需要将其还原成正常的矩阵形式，使用pad_packed_sequence函数'''</span></span><br><span class="line">    out_pad, out_len = rnn_utils.pad_packed_sequence(out, batch_first=<span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line">    print(out_pad)</span><br><span class="line">    print(<span class="string">'END'</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor([[[ 0.0490,  0.1100,  0.0750,  0.0998,  0.3622, -0.0891,  0.1562, 0.0122, -0.1227,  0.0537],
+         [ 0.0113,  0.0290,  0.0375,  0.1051,  0.2836, -0.1209,  0.1458, -0.0848, -0.1296, -0.0788],
+         [ 0.0048, -0.0075,  0.0173,  0.0673,  0.2713, -0.1431,  0.1392, -0.1227, -0.1214, -0.1425],
+         [ 0.0102, -0.0246,  0.0090,  0.0291,  0.2600, -0.1579,  0.1342, -0.1392, -0.1135, -0.1720],
+         [ 0.0177, -0.0328,  0.0058, -0.0016,  0.2524, -0.1678,  0.1313, -0.1480, -0.1091, -0.1863],
+         [ 0.0240, -0.0371,  0.0048, -0.0244,  0.2475, -0.1742,  0.1300, -0.1542, -0.1074, -0.1939],
+         [ 0.0286, -0.0398,  0.0047, -0.0408,  0.2445, -0.1782,  0.1298, -0.1592, -0.1071, -0.1983]],
+
+        [[ 0.2161, -0.0114,  0.1041,  0.0859,  0.0486, -0.0040,  0.2124, 0.1901,  0.1633,  0.1281],
+         [ 0.1089, -0.0357,  0.0969,  0.0758,  0.1588, -0.1085,  0.1722, 0.0266, -0.0036, -0.0442],
+         [ 0.0438, -0.0525,  0.0566,  0.0414,  0.2152, -0.1581,  0.1527, -0.0615, -0.0681, -0.1262],
+         [ 0.0199, -0.0631,  0.0303,  0.0025,  0.2376, -0.1802,  0.1418, -0.1058, -0.0890, -0.1643],
+         [ 0.0137, -0.0696,  0.0154, -0.0301,  0.2450, -0.1906,  0.1362, -0.1309, -0.0954, -0.1821],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000]],
+
+        [[-0.0518,  0.0285,  0.1449,  0.1145,  0.2673, -0.0603,  0.1157, .1086, -0.0482, -0.0614],
+         [-0.0578, -0.0089,  0.0664,  0.0769,  0.2777, -0.1151,  0.1328, -0.0094, -0.0666, -0.1451],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
+         [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000]]])
+END</code></pre>
+	  
+
+
+      	  
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          ~赞~
+        </div>
+        
+    </div>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/20201124_DKT-Pytorch/index.html" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Deep Knowledge Tracing [Pytorch]</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'IBXbYeb2rqEJjd9E7AbMgdey-gzGzoHsz',
+        app_key: 'RLhFH89nQaSMGKs0Nl2egMtM',
+        path: window.location.pathname,
+        avatar: 'wavatar',
+        placeholder: '说说吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+	<div class="outer">
+		  	  <!-- 版权 -->
+		  	  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		      <div align="center">
+			        &copy;
+			        2019-2020
+			        <font color="grey" size="3px">&hearts;</font>
+			        Cheng Song
+
+		      &nbsp;
+
+					<!-- 备案 -->
+				    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow"><img src="https://img.chsong.live/Background/images/beian.png?x-oss-process=style/o" height="18px" weight="18px" align="center"/>鄂ICP备20012823号</a>
+		      </div>
+	</div>
+
+	<div align="center">
+	<div class="powered-by">
+		<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+		  本站访客数:<span id="busuanzi_value_site_uv"></span>
+		</span>
+	&nbsp; 	
+	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278554282'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278554282%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+	</div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+      <a href="/index.html"><img class="rotate" src="https://img.chsong.live/Background/images/cs.svg" alt="心有暖阳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives/index.html">时间轴</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/index.html">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery/index.html">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/shuoshuo/index.html">动态</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/index.html">主页</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://github.com/chsong513/" target="_blank" rel="noopener">
+        <img src="https://img.chsong.live/Background/images/github.png?x-oss-process=style/o" style="weight:25px; height:25px;"/>
+      </a>
+    </li>
+
+<!--     <li class="nav-item">
+      <a class="nav-item-link" href="mailto:chsong@mail.ustc.edu.cn">
+        <img src="https://img.chsong.live/Background/images/mail.png?x-oss-process=style/o" style="weight:19.2px; height:15px;"/>
+      </a>
+    </li> -->
+
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>么么哒，请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://img.chsong.live/Background/images/alipay.jpg?x-oss-process=style/o">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://img.chsong.live/Background/images/wechat.png?x-oss-process=style/o">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+
+</html>
