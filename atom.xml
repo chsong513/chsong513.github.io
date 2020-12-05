@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.chsong.live/"/>
-  <updated>2020-12-05T08:21:00.000Z</updated>
+  <updated>2020-12-05T08:43:00.000Z</updated>
   <id>http://www.chsong.live/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Transfer Component Analyze (TCA)</title>
+    <link href="http://www.chsong.live/20201205_TCA/index.html"/>
+    <id>http://www.chsong.live/20201205_TCA/index.html</id>
+    <published>2020-12-05T08:43:00.000Z</published>
+    <updated>2020-12-05T08:43:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.chsong.live/Blogs/TCA/1.png-s&quot; alt=&quot;TCA&quot;&gt;&lt;/p&gt;
+&lt;p&gt;TCA属于基于特征的迁移学习方法。那么，它做了一件什么事呢？用通俗的语言来说，跟PCA很像：PCA是一个大矩阵进去，一个小矩阵出来，TCA呢，是两个大矩阵进去，两个小矩阵出来。从学术角度讲，TCA针对domain adaptation问题中，源域和目标域处于不同数据分布时，将两个领域的数据一起映射到一个高维的再生核希尔伯特空间。在此空间中，最小化源和目标的数据距离，同时最大程度地保留它们各自的内部属性。直观地理解就是，在现在这个维度上不好最小化它们的距离，那么我就找个映射，在映射后的空间上让它们最接近，那么我不就可以进行分类了吗。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="算法" scheme="http://www.chsong.live/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="科研" scheme="http://www.chsong.live/tags/%E7%A7%91%E7%A0%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Joint Distribution Adaptation (JDA)</title>
