@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.chsong.live/gallery/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80/index.html</loc>
+    
+    <lastmod>2020-12-07</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.chsong.live/20201205_PCA%E4%B8%8ESVD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/index.html</loc>
     
     <lastmod>2020-12-05</lastmod>
@@ -93,14 +100,14 @@
   </url>
   
   <url>
-    <loc>http://www.chsong.live/gallery/CIKM19/index.html</loc>
+    <loc>http://www.chsong.live/gallery/CQQ/index.html</loc>
     
     <lastmod>2020-09-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.chsong.live/gallery/CQQ/index.html</loc>
+    <loc>http://www.chsong.live/gallery/CIKM19/index.html</loc>
     
     <lastmod>2020-09-27</lastmod>
     
@@ -172,6 +179,13 @@
 
   
   <url>
+    <loc>http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2020-12-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.chsong.live/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2020-12-07</lastmod>
     <changefreq>daily</changefreq>
@@ -193,21 +207,14 @@
   </url>
   
   <url>
-    <loc>http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/</loc>
-    <lastmod>2020-12-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2020-12-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.chsong.live/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/</loc>
+    <lastmod>2020-12-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/</loc>
     <lastmod>2020-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
