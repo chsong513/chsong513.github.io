@@ -6045,6 +6045,7 @@ button {
   border-bottom: 0.1rem #999 solid;
 }
 .search-result-list li .search-result-title {
+  color: #ffc0cb;
   font-size: 1.6rem;
   font-weight: bold;
 }
