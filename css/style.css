@@ -5552,10 +5552,10 @@ a {
   color: #000;
 }
 a:hover {
-  color: #000;
+  color: #db7093;
 }
 a:active {
-  color: #5eadff;
+  color: #db7093;
 }
 a.disabled {
   color: #adb5bd;
@@ -6684,7 +6684,7 @@ a.toc-link {
 }
 .archive-article-header h2 .archive-article-title {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .archive-article-footer {
   margin-top: 1.5rem;
