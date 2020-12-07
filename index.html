@@ -88,9 +88,13 @@
 <section class="cover">
     
   <div class="cover-frame">
+    <div id = 'aaa'>
+    <a href="">
     <div class="bg-box" id="bgs">
-      <img src="https://img.chsong.live/WZRY/孙尚香.jpg-o" alt="image frame" />
+      <img src="https://img.chsong.live/LunBo/1.jpg-o" alt="image frame" />
     </div>
+    </a>
+  </div>
     <div class="cover-inner text-center text-white">
       <h2><a href="/"></a></h2>
       <h2></h2>
@@ -103,8 +107,16 @@
     <a href="#main" class="anchor"><i class="ri-arrow-down-line"></i></a>
   </div>
 </section>
-
-
+<script>
+var pics=document.getElementById("aaa");
+var n=1;
+var lburls = ['','','',''];
+setInterval(function(){
+    if(n>4) n=1;
+    pics.innerHTML="<a style='margin:0px; padding:0px;' href='" + lburls[n-1] + "'><div class='bg-box' id='bgs'><img src='https://img.chsong.live/LunBo/"+n+".jpg-o'/></div></a>";
+    n++;
+},2500);
+</script>
 
 <div id="main">
   <section class="outer">
