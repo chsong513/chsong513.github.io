@@ -93,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://www.chsong.live/gallery/CQQ/index.html</loc>
+    <loc>http://www.chsong.live/gallery/CIKM19/index.html</loc>
     
     <lastmod>2020-09-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.chsong.live/gallery/CIKM19/index.html</loc>
+    <loc>http://www.chsong.live/gallery/CQQ/index.html</loc>
     
     <lastmod>2020-09-27</lastmod>
     
@@ -172,6 +172,13 @@
 
   
   <url>
+    <loc>http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2020-12-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.chsong.live/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2020-12-07</lastmod>
     <changefreq>daily</changefreq>
@@ -194,13 +201,6 @@
   
   <url>
     <loc>http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/</loc>
-    <lastmod>2020-12-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2020-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
