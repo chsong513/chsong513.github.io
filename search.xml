@@ -37,6 +37,7 @@
 <a id="more"></a>
 
 <p><video src="http://chengsong-img.oss-cn-hangzhou.aliyuncs.com/Blogs/%E4%BA%94%E8%BF%9E%E7%BB%9D%E4%B8%96/%E5%AD%99%E5%B0%9A%E9%A6%99.mp4" width="800px" height="450px" controls="controls"></video> </p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>动态</tag>
@@ -73,6 +74,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'''visualization'''</span></span><br><span class="line">plt.scatter(X_pca[:,<span class="number">0</span>],X_pca[:,<span class="number">1</span>], c=Y)</span><br></pre></td></tr></table></figure>
 
 <p><img src="http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/2.png-s" alt="png"></p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -137,6 +139,7 @@ plt.plot(T_N_bins, T_N_y/<span class="number">10</span>, <span class="string">'b
 plt.legend([<span class="string">'Source'</span>, <span class="string">'Target'</span>, <span class="string">'Pos. Source'</span>, <span class="string">'Neg. Source'</span>, <span class="string">'Pos. Target'</span>, <span class="string">'Neg. Target'</span>])
 plt.show()</code></pre>
 <p><img src="http://img.chsong.live/Blogs/TCA/4.png-s" alt="png"></p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -166,6 +169,7 @@ plt.show()</code></pre>
 <p>from mnist to usps<br>    acc of baseline 1-NN: 0.644444444444<br>    iteration: 1  acc: 0.743333333333<br>    iteration: 2  acc: 0.764444444444<br>    iteration: 3  acc: 0.756666666667<br>    iteration: 4  acc: 0.755555555556<br>    iteration: 5  acc: 0.757777777778<br>    acc of jda: 0.757777777778</p>
 <p>from usps to mnist<br>    acc of baseline 1-NN: 0.3585<br>    iteration: 1  acc: 0.583<br>    iteration: 2  acc: 0.6165<br>    iteration: 3  acc: 0.613<br>    iteration: 4  acc: 0.6135<br>    iteration: 5  acc: 0.619<br>    acc of jda: 0.619</p>
 <p>效果比JDA原文里面的实验结果好很多，尤其是从mnist到usps，可能是因为数据的原因，虽然都是随即抽取的样本，mnist：2000，usps：1800. 跟原文还是有一些差别。</p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -220,7 +224,8 @@ plt.show()</code></pre>
          [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
          [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
          [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000]]])
-END</code></pre>]]></content>
+END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+]]></content>
       <tags>
         <tag>算法</tag>
         <tag>科研</tag>
@@ -347,6 +352,7 @@ END</code></pre>]]></content>
 </font>
 
 <p><img src="https://img.chsong.live/Blogs/DKT-pytorch/DKT%E4%BA%A4%E6%B5%81%E7%BE%A4.png-m" alt=""></p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -429,6 +435,7 @@ END</code></pre>]]></content>
 </thead>
 </table>
 <p>原ppt可以在<a href="http://chengsong-img.oss-cn-hangzhou.aliyuncs.com/Blogs/%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B/20201015%E5%A4%A7%E5%88%86%E4%BA%AB%E5%AE%9E%E6%97%B6%E8%83%9C%E7%8E%87%E9%A2%84%E6%B5%8B.pptx" target="_blank" rel="noopener">此处</a>下载。</p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>科研</tag>
@@ -439,6 +446,7 @@ END</code></pre>]]></content>
     <url>/20201123_%E6%99%BA%E8%83%BD%E5%8C%96%E6%95%99%E8%82%B2%E4%B8%8E%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/index.html</url>
     <content><![CDATA[<p><img src="https://imgs.ebrun.com/resources/2018_01/2018_01_09/2018010914915154810164470.jpg" alt=""></p>
 <p>人工智能不仅是一场技术革命和产业革命，更是一场数据革命。为了不断提升智能化水平，必定有越来越多的数据被收集。<a id="more"></a>在智能教育领域，学习者等相关的主体都已被卷入这场声势浩大的数据革命之中。如何在发展智能教育的同时，实现对学习者数据在存储、共享、使用过程中隐私的保护，必定会成为智能教育时代的主题。目前，智能教育和隐私保护之间的平衡性仍处于基础设想阶段。本人及课题组基于教育领域的数据特征，结合隐私保护相关法律法规、伦理道德，界定不同的隐私及隐私程度；从智能教育实施的整个流程所涉及的数据采集、存储与传输、共享与使用等环节来分析隐私泄露的可能性，同时研究具体的实现隐私保护的相关技术。研究结果对于合理发挥教育数据的价值进而提升智能教育水平具有重要意义；为教育的公平性、相关立法、教育领域大数据防火墙的构筑等提供了新的指导。</p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>科研</tag>
@@ -516,6 +524,8 @@ END</code></pre>]]></content>
 </blockquote>
 <p>因此，如果要提交通过的话，需要将上面N，K输入部分，替换成面的代码。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dim = list(map(int, input().split()))</span><br><span class="line"><span class="keyword">if</span> len(dim) == <span class="number">2</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = dim[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = int(input())</span><br></pre></td></tr></table></figure>
+
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -559,6 +569,7 @@ END</code></pre>]]></content>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">	d[<span class="number">0</span>][i] = max(d[<span class="number">0</span>][i<span class="number">-1</span>], d[<span class="number">1</span>][i<span class="number">-1</span>] + a[i])</span><br><span class="line">	d[<span class="number">1</span>][i] = max(d[<span class="number">1</span>][i<span class="number">-1</span>], d[<span class="number">0</span>][i<span class="number">-1</span>] - a[i])</span><br><span class="line"><span class="comment"># 最后返回有宝石和没宝石两种情况的最大值</span></span><br><span class="line"><span class="keyword">return</span> max(d[<span class="number">0</span>][n], d[<span class="number">1</span>][n])</span><br></pre></td></tr></table></figure>
 <p>待续…</p>
 <h3 id="贪心策略"><a href="#贪心策略" class="headerlink" title="贪心策略"></a>贪心策略</h3><p>待续…</p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -596,6 +607,7 @@ END</code></pre>]]></content>
 <p>师兄们不要笑，糖葫芦挺好吃的，咋不来尝尝呢</p>
 <p>还有武术，舞狮，戏剧，大鱼海棠，满满的中国风</p>
 <p>从提出idea到今天，整个过程难呀，感谢师兄师姐，还有导师们的帮助</p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>动态</tag>
@@ -641,6 +653,7 @@ END</code></pre>]]></content>
 <li>然后英语要不要丢掉，学了这么多年不能白学了，尤其是以后做研究搞学术还是需要的，面试的时候虽然不一定会问，但是如果问了就懵了，英语还是要坚持学。</li>
 <li>还有就是在面临选择是要坚持自己的意愿，不能被眼前的利益所诱惑，该放弃的要果断放弃，适合自己兴趣的才是最好的。</li>
 </ul>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>动态</tag>
@@ -656,6 +669,7 @@ END</code></pre>]]></content>
 <h2 id="生活方面"><a href="#生活方面" class="headerlink" title="生活方面"></a>生活方面</h2><p> 在大学四年里面除了学习只外当然还会接触到一些有趣的难忘的事情，我也是有好奇心的，刚来到大学我也报名了社团基地之类组织，但是那些什么乐队呀主持啊新闻啊之类的肯定跟我是无缘了，说白了我没有任何特长，普通得不能在普通了，我就加了微软俱乐部，但是我好像一次也没去过，那儿的人好像也一次也没找过我，我至今都不知道那里面是干啥的，有些吃惊。。。其他的一些什么搬桌子凳子我就更不可能去了，我好像没有那么的高尚无私，我可不想没有意义的在哪里搬东西收拾东西，目前作为预备党员似乎应该有点大公无私的精神哟！哈哈哈！我就欺骗一下我自己你们别当真！哈哈哈！还在ACM基地待过，但是由于水平不够，我又不想天天对着电脑成百上千的刷着机试题所以最后也没去。大二时我又报了一个机器人基地，最后也是由于类似原因半路退出，现在想想我好像不太能坚持看不到希望的事情，我原本是希望能通过基地或一两个奖的，但是由于各种乱七八糟的事情又放弃了。我没有完整的参加过一个社团，坚持不下来，但是感觉有些东西即使坚持了也许还是得不到，最近的一件事也是有些苦恼不知如何是好。在大一的时候班级聚餐或其他活动我也会去参加，跟大家一块玩，但是越往后去的越少，甚至都没有活动了。大学的班级不像高中，比较松散各玩各的。前两年都沉迷于学习，偶尔跟同学去几个景点逛逛，拍两张照片就很高兴了。只是这一学期倒还有些乐趣，和同学看了不少电影，也看了一两本书，以前是几乎不看的，所以最近总说原来这才是大学生活。。。在大学里面加了不少的好友，认识的不认识的，同班的不同班的都有，几乎都是男生，女生并不多，甚至我们班的女生都没有全加上。加的好友虽然多，但是常联系经常交流的并不多甚至说就那么几个，跟高中一样还在联系的就那么几个，一个手掌都能数完，一想到这难免有些难过。偶尔跟同学出去吃个饭聊聊天感觉还是很好的。昨天刚跟一个考完研的同学出去吃了饭，顺便看了个电影《芳华》没想到那么伤感。。。有一些感触，最近的状态不太适合看这种情感过于细腻的电影。我好像跑题了。。。一个朋友说我说话有点自娱自乐，好像很对呀哈哈哈！总之大学里面没完整参加过社团,没有到处闲逛，偶尔跟同学一起出去玩玩，感觉过得很平淡。</p>
 <h2 id="有些遗憾的"><a href="#有些遗憾的" class="headerlink" title="有些遗憾的"></a>有些遗憾的</h2><p> 刚说了在大学里面虽然认识了很多人，但是那种经常联系一起吃饭聊天的不多，这也许是大学过的很枯燥很平淡的原因。机会只有一次，如果再给我一个机会结果可能还是会这样哈哈哈<del>~</del>有时有人问我有女朋友没有，我说我没有谈过恋爱哪来女朋友，有些人感觉很吃惊。我感觉很正常啊哈哈哈。。。再说也不容易遇到喜欢的人（不是眼光高哟）认识的女生也不多。偶尔会听到一个说法是大学就该谈恋爱，我也不知道是不是，哈哈不说了尴尬。还有我本打算在大学好好锻炼身体的，但是自己似乎总是有理由有借口，宁可坐着发呆睡懒觉也不想动，虽然我知道不好，但就是不想动不知道为什么，这是我最后悔的一件事。感觉大学里就没把学习落下，其余的什么事都没有做过。这大学几年看来过的并不完美。</p>
 <p> 不管怎样，已经过去的无法在改变了，目前能做的就是最好未来的规划，也许还会同样的不完美，能做出一些改变也是好的。最近过的太悠闲，生活很没规律无所事事，也有一些事情比较纠结，总喜欢胡思乱想，希望能在元旦回去之后调整一下自己，希望在研究生阶段能弥补一些大学的遗憾，最起码要锻炼身体，其余的事再说，感觉我现在就开始讨价还价了。。。这样好像不好，希望不要给自己打脸，我看好我。最近有些颓废，马上就2018年了又老了一岁，希望自己写的这个垃圾文章能够警醒一下自己，革命尚未成功，仍需努力。fighting！！！</p>
+<p> 更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -688,6 +702,7 @@ END</code></pre>]]></content>
 <p>第二个变量的选择称为内层循环，在找到第一个变量$\alpha_1$的条件下，在内层循环中寻找第二个变量$\alpha_2$，第二个变量的选择标准是希望能够使$\alpha_2$尽量有足够大的变化。</p>
 <p>关于SMO算法中的变量选择方法我目前并不是完全懂，先写到这里为止。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此次总结对之前学的支持向量机的相关知识进行了一次回顾，支持向量机结合核技巧是一个非常好的学习算法，它利用了拉格朗日问题的对偶性，将原问题转换为对偶问题，因为可能存在一种情况是每个样本的属性非常的多，也就是输入空间的维数非常的大，而转换为对偶问题之后，参数是和样本一一对应的，因此参数数目就是样本的数目，这能够大大减小计算的复杂度，最后对于求解凸二次规划问题有十分有效的SMO算法，因为子问题有解析解，因此每次计算子问题都十分的快，虽然子问题数目多，但是总体上看来还是很快的。</p>
+<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
 ]]></content>
       <tags>
         <tag>机器学习</tag>
