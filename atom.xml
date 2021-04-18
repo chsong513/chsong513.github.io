@@ -65,7 +65,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/1.png-s&quot; alt=&quot;PCA&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/1.png-m&quot; alt=&quot;PCA&quot;&gt;&lt;/p&gt;
 &lt;p&gt;在用数据对模型进行训练时，通常会遇到维度过高，也就是数据的特征太多的问题，有时特征之间还存在一定的相关性，这时如果还使用原数据训练模型，模型的精度会大大下降，因此要降低数据的维度，同时新数据的特征之间还要保持线性无关。有一种方法称为主成分分析（Principal component analysis，PCA），新数据的特征称为主成分，得到主成分的方法有两种：直接对协方差矩阵进行特征值分解和对数据矩阵进行奇异值分解（SVD）。&lt;/p&gt;
     
     </summary>
@@ -220,9 +220,9 @@
     
     
     
-      <category term="动态" scheme="http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/"/>
-    
       <category term="随笔" scheme="http://www.chsong.live/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="动态" scheme="http://www.chsong.live/tags/%E5%8A%A8%E6%80%81/"/>
     
   </entry>
   
@@ -317,7 +317,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;从来都不喜欢写作文之类的东西，主要是因为文笔不好，因此对于这方面没有兴趣，经常希望能有机会对自己过去的一段时间所做的和所经历的事情做一些回顾和总结。转眼就2018年了，前两天大家还都在考研，虽然我不考，但是我也有些小兴奋。。。最近一个月左右也过的很无聊，除了准备一下毕设的一些事情之外似乎也无所事事，今天下午同样是无聊，因此借此机会对过去的大学四年简单的总结一下。&lt;/p&gt;
+      有东西被加密了, 请输入密码查看.
     
     </summary>
     

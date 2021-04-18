@@ -239,7 +239,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">performance</span><span class="params">(ground_truth, prediction)</span>:</span></span><br><span class="line">    fpr, tpr, thresholds = metrics.roc_curve(ground_truth.detach().numpy(), prediction.detach().numpy())</span><br><span class="line">    auc = metrics.auc(fpr, tpr)</span><br><span class="line">    f1 = metrics.f1_score(ground_truth.detach().numpy(), torch.round(prediction).detach().numpy())</span><br><span class="line">    recall = metrics.recall_score(ground_truth.detach().numpy(), torch.round(prediction).detach().numpy())</span><br><span class="line">    precision = metrics.precision_score(ground_truth.detach().numpy(), torch.round(prediction).detach().numpy())</span><br><span class="line">    print(<span class="string">'auc:'</span> + str(auc) + <span class="string">' f1: '</span> + str(f1) + <span class="string">' recall: '</span> + str(recall) + <span class="string">' precision: '</span> + str(precision) + <span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
 <p>到此处为止，DKT项目的所有部分都已介绍完毕。由于时间仓促，并没有把所有细节都介绍很清楚，但对于学习和理解DKT来说已经足够了。后续有时间会根据需要补充一些更细节的介绍，如果有什么问题或建议可直接评论留言，我会及时回复，或者通过主页的邮箱联系。</p>
 
-<font color=red>这里有一个知识追踪前沿研究技术交流群，欢迎大家进群交流学习，关注公众号查看群二维码。
+<font color=red>这里有一个知识追踪前沿研究技术交流群，欢迎大家进群交流学习，群聊及更多精彩内容请关注公众号。
 </font>
 
 
