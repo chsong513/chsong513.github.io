@@ -125,7 +125,7 @@
 
     
 
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" id="jiedu" itemprop="articleBody">
       
       <p><img src="http://img.chsong.live/Blogs/DKT-pytorch/1.png-o" alt="DKT"></p>
 <p>知识追踪（Knowledge Tracing）是根据学生过去的答题情况对学生的知识掌握情况进行建模，从而得到学生当前知识状态表示的一种技术。将深度学习的方法引入知识追踪最早出现于发表在NeurIPS 2015上的一篇论文《Deep Knowledge Tracing》，作者来自斯坦福大学。在这篇论文中，作者提出了使用深度知识追踪（Deep Knowledge Tracing, DKT）的概念，利用RNN对学生的学习情况进行建模，之后引出了一系列工作，2019年已经有使用Transformer代替RNN和LSTM并且达到了SOTA的论文。DKT作为知识追踪模型深度化的开山之作，在几乎所有的深度知识追踪模型中都作为baseline，而DKT作者给出的模型实现是基于lua语言的，为了能够让更多的研究人员更方便的使用，这里给出一种python的实现，采用的是pytorch框架。</p>
