@@ -26,6 +26,7 @@
     <content><![CDATA[<p><img src="http://img.chsong.live/Blogs/%E5%A9%86%E5%A8%91%E5%A2%83%E9%87%8C%E7%9A%84%E6%B5%81%E6%B5%AA/1.png-o" alt=""></p>
 <a id="more"></a>
 <p><img src="http://img.chsong.live/Blogs/%E5%A9%86%E5%A8%91%E5%A2%83%E9%87%8C%E7%9A%84%E6%B5%81%E6%B5%AA/2.png-o" alt=""></p>
+<p>【<a href="https://mp.weixin.qq.com/s?__biz=Mzg3MDIwMTgzNQ==&mid=2247484165&idx=1&sn=0ef51fea1f7058a7936578831c77a1a2&chksm=ce902381f9e7aa9744d63ca720dd86a76cb3fd5c91af25686a60d893dc5a096316633627fea7&token=1886932722&lang=zh_CN#rd" target="_blank" rel="noopener">阅读原文</a>】<strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
 ]]></content>
       <tags>
         <tag>一切皆可解读</tag>
@@ -105,7 +106,8 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'''visualization'''</span></span><br><span class="line">plt.scatter(X_pca[:,<span class="number">0</span>],X_pca[:,<span class="number">1</span>], c=Y)</span><br></pre></td></tr></table></figure>
 
 <p><img src="http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/2.png-o" alt="png"></p>
-<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -170,7 +172,8 @@ plt.plot(T_N_bins, T_N_y/<span class="number">10</span>, <span class="string">'b
 plt.legend([<span class="string">'Source'</span>, <span class="string">'Target'</span>, <span class="string">'Pos. Source'</span>, <span class="string">'Neg. Source'</span>, <span class="string">'Pos. Target'</span>, <span class="string">'Neg. Target'</span>])
 plt.show()</code></pre>
 <p><img src="http://img.chsong.live/Blogs/TCA/4.png-o" alt="png"></p>
-<p>最新精彩内容，请关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -200,7 +203,8 @@ plt.show()</code></pre>
 <p>from mnist to usps<br>    acc of baseline 1-NN: 0.644444444444<br>    iteration: 1  acc: 0.743333333333<br>    iteration: 2  acc: 0.764444444444<br>    iteration: 3  acc: 0.756666666667<br>    iteration: 4  acc: 0.755555555556<br>    iteration: 5  acc: 0.757777777778<br>    acc of jda: 0.757777777778</p>
 <p>from usps to mnist<br>    acc of baseline 1-NN: 0.3585<br>    iteration: 1  acc: 0.583<br>    iteration: 2  acc: 0.6165<br>    iteration: 3  acc: 0.613<br>    iteration: 4  acc: 0.6135<br>    iteration: 5  acc: 0.619<br>    acc of jda: 0.619</p>
 <p>效果比JDA原文里面的实验结果好很多，尤其是从mnist到usps，可能是因为数据的原因，虽然都是随即抽取的样本，mnist：2000，usps：1800. 跟原文还是有一些差别。</p>
-<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -255,7 +259,8 @@ plt.show()</code></pre>
          [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
          [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000],
          [ 0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000, 0.0000,  0.0000,  0.0000]]])
-END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+END</code></pre><p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
         <tag>算法</tag>
@@ -482,7 +487,8 @@ END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br>
 </tr>
 </thead>
 </table>
-<p>获取完整ppt，搜索关注微信公众号【一切皆可解读】，回复关键词【XZ001】直接下载。<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p>获取完整ppt，搜索关注微信公众号【一切皆可解读】，回复关键词【XZ001】直接下载。<br><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
         <tag>科研</tag>
@@ -493,7 +499,8 @@ END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br>
     <url>/20201123_%E6%99%BA%E8%83%BD%E5%8C%96%E6%95%99%E8%82%B2%E4%B8%8E%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/index.html</url>
     <content><![CDATA[<p><img src="https://imgs.ebrun.com/resources/2018_01/2018_01_09/2018010914915154810164470.jpg" alt=""></p>
 <p>人工智能不仅是一场技术革命和产业革命，更是一场数据革命。为了不断提升智能化水平，必定有越来越多的数据被收集。<a id="more"></a>在智能教育领域，学习者等相关的主体都已被卷入这场声势浩大的数据革命之中。如何在发展智能教育的同时，实现对学习者数据在存储、共享、使用过程中隐私的保护，必定会成为智能教育时代的主题。目前，智能教育和隐私保护之间的平衡性仍处于基础设想阶段。本人及课题组基于教育领域的数据特征，结合隐私保护相关法律法规、伦理道德，界定不同的隐私及隐私程度；从智能教育实施的整个流程所涉及的数据采集、存储与传输、共享与使用等环节来分析隐私泄露的可能性，同时研究具体的实现隐私保护的相关技术。研究结果对于合理发挥教育数据的价值进而提升智能教育水平具有重要意义；为教育的公平性、相关立法、教育领域大数据防火墙的构筑等提供了新的指导。</p>
-<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
         <tag>科研</tag>
@@ -572,11 +579,12 @@ END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br>
 <p>因此，如果要提交通过的话，需要将上面N，K输入部分，替换成面的代码。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dim = list(map(int, input().split()))</span><br><span class="line"><span class="keyword">if</span> len(dim) == <span class="number">2</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = dim[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	N = dim[<span class="number">0</span>]</span><br><span class="line">	K = int(input())</span><br></pre></td></tr></table></figure>
 
-<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
-        <tag>算法</tag>
         <tag>牛客网</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -616,11 +624,12 @@ END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">	d[<span class="number">0</span>][i] = max(d[<span class="number">0</span>][i<span class="number">-1</span>], d[<span class="number">1</span>][i<span class="number">-1</span>] + a[i])</span><br><span class="line">	d[<span class="number">1</span>][i] = max(d[<span class="number">1</span>][i<span class="number">-1</span>], d[<span class="number">0</span>][i<span class="number">-1</span>] - a[i])</span><br><span class="line"><span class="comment"># 最后返回有宝石和没宝石两种情况的最大值</span></span><br><span class="line"><span class="keyword">return</span> max(d[<span class="number">0</span>][n], d[<span class="number">1</span>][n])</span><br></pre></td></tr></table></figure>
 <p>待续…</p>
 <h3 id="贪心策略"><a href="#贪心策略" class="headerlink" title="贪心策略"></a>贪心策略</h3><p>待续…</p>
-<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
-        <tag>算法</tag>
         <tag>牛客网</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -654,7 +663,8 @@ END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br>
 <p>师兄们不要笑，糖葫芦挺好吃的，咋不来尝尝呢</p>
 <p>还有武术，舞狮，戏剧，大鱼海棠，满满的中国风</p>
 <p>从提出idea到今天，整个过程难呀，感谢师兄师姐，还有导师们的帮助</p>
-<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
         <tag>动态</tag>
@@ -760,11 +770,12 @@ END</code></pre><p>更多文章，关注微信公众号：一切皆可解读<br>
 <p>第二个变量的选择称为内层循环，在找到第一个变量$\alpha_1$的条件下，在内层循环中寻找第二个变量$\alpha_2$，第二个变量的选择标准是希望能够使$\alpha_2$尽量有足够大的变化。</p>
 <p>关于SMO算法中的变量选择方法我目前并不是完全懂，先写到这里为止。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此次总结对之前学的支持向量机的相关知识进行了一次回顾，支持向量机结合核技巧是一个非常好的学习算法，它利用了拉格朗日问题的对偶性，将原问题转换为对偶问题，因为可能存在一种情况是每个样本的属性非常的多，也就是输入空间的维数非常的大，而转换为对偶问题之后，参数是和样本一一对应的，因此参数数目就是样本的数目，这能够大大减小计算的复杂度，最后对于求解凸二次规划问题有十分有效的SMO算法，因为子问题有解析解，因此每次计算子问题都十分的快，虽然子问题数目多，但是总体上看来还是很快的。</p>
-<p>更多文章，关注微信公众号：一切皆可解读<br><img src="https://img.chsong.live/Blogs/gzh.png-s" alt=""></p>
+<p><strong>最新精彩内容，请关注微信公众号：一切皆可解读</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xen93oXZSEVSRMz6zuJZqyRyYjqTGzA6cVpJ4emnIxkI9Pr5bRt8JO898QQPWSTcbNiaANib53SmxLUMkXoxjUoQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
 ]]></content>
       <tags>
-        <tag>机器学习</tag>
         <tag>算法</tag>
+        <tag>机器学习</tag>
         <tag>科研</tag>
       </tags>
   </entry>
