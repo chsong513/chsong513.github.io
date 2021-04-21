@@ -229,15 +229,11 @@ END</code></pre><p><strong>最新精彩内容，请关注微信公众号：一�
 <script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
 <script>
 
-    var GUEST = ['nick', 'mail', 'link'];
-
-    var meta = 'nick,mail,link';
-    meta = meta.split(',').filter(function(item) {
-        return GUEST.indexOf(item) > -1;
-    }); 
-
-    var requiredFields = 'nick';
-    requiredFields  = requiredFields.split(',');
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
 
     new Valine({
         el: '#vcomments',
@@ -249,8 +245,8 @@ END</code></pre><p><strong>最新精彩内容，请关注微信公众号：一�
         avatar: 'wavatar',
         placeholder: '说说吧~',
         recordIP: true,
-        meta: meta,
-        requiredFields: requiredFields,
+        meta: guest_info,
+        requiredFields: ['nick', 'mail']
     });
     const infoEle = document.querySelector('#vcomments .info');
     if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
@@ -312,10 +308,13 @@ END</code></pre><p><strong>最新精彩内容，请关注微信公众号：一�
 	<div align="center">
 	<div class="powered-by">
 		<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-		  本站访客数:<span id="busuanzi_value_site_uv"></span>
+		  本站访客:<span id="busuanzi_value_site_uv"></span>
 		</span>
 	&nbsp; 	
-	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278554282'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278554282%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		<i class="fa fa-user-md"></i><span id="busuanzi_container_page_pv">
+			本文浏览:<span id="busuanzi_value_page_pv"></span>
+		</span>
+
 	</div>
 	</div>
 </footer>
