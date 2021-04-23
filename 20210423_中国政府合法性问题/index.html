@@ -50,7 +50,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    PCA与SVD之间的关系 |  
+    老外竟然问：“中国政府的合法性源自何处？” |  
   </title>
   
   <link rel="shortcut icon" href="/logo.ico" />
@@ -90,7 +90,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-20201205_PCA与SVD之间的关系" class="article article-type-post" itemscope
+  <article id="post-20210423_中国政府合法性问题" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -98,7 +98,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  PCA与SVD之间的关系
+  老外竟然问：“中国政府的合法性源自何处？”
 </h1>
   
 
@@ -107,8 +107,8 @@
 
     
     <div class="article-meta">
-      <a href="/20201205_PCA%E4%B8%8ESVD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/index.html" class="article-date">
-  <time datetime="2020-12-05T09:01:00.000Z" itemprop="datePublished">2020-12-05</time>&nbsp;&nbsp;&nbsp;
+      <a href="/20210423_%E4%B8%AD%E5%9B%BD%E6%94%BF%E5%BA%9C%E5%90%88%E6%B3%95%E6%80%A7%E9%97%AE%E9%A2%98/index.html" class="article-date">
+  <time datetime="2021-04-23T12:25:25.354Z" itemprop="datePublished">2021-04-23</time>&nbsp;&nbsp;&nbsp;
 </a>
 
       
@@ -123,8 +123,6 @@
 
     
     
-    <div class="tocbot"></div>
-
 
 
 
@@ -133,34 +131,23 @@
 
     <div class="article-entry" id="jiedu" itemprop="articleBody">
       
-      <p><img src="http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/1.png-m" alt="PCA"></p>
-<p>在用数据对模型进行训练时，通常会遇到维度过高，也就是数据的特征太多的问题，有时特征之间还存在一定的相关性，这时如果还使用原数据训练模型，模型的精度会大大下降，因此要降低数据的维度，同时新数据的特征之间还要保持线性无关。有一种方法称为主成分分析（Principal component analysis，PCA），新数据的特征称为主成分，得到主成分的方法有两种：直接对协方差矩阵进行特征值分解和对数据矩阵进行奇异值分解（SVD）。</p>
+      <p><img src="http://img.chsong.live/Blogs/%E4%B8%AD%E5%9B%BD%E6%94%BF%E5%BA%9C%E5%90%88%E6%B3%95%E6%80%A7/1.jpeg-o" alt=""></p>
+<p>在一档节目中，南苏丹总统办公室前主管AwanRiak，向复旦大学中国研究院院长张维老师提问：中国政府的合法性源自何处？</p>
+<p>AwanRiak问：“中华人民共和国政府的合法性源自何处？是源自中国共产党，还是源自中国人民？”</p>
 <a id="more"></a>
 
-<h2 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h2><p>一种经典的数据降维算法，推导过程有多种形式：最近重构性、最大可区分性等。这里以最大可区分性为例。</p>
-<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>设$X\in R^{n\times d} = {x_1, x_2,\dots, x_n}$为数据集，包含$n$个样本，每个样本有$d$维特征, 即$x_i\in R^{d}$。</p>
-<h3 id="降维可视化"><a href="#降维可视化" class="headerlink" title="降维可视化"></a>降维可视化</h3><p><img src="http://jupter-oss.oss-cn-hangzhou.aliyuncs.com/public/files/image/1095279401413/1576909454842_sVWwhScNGQ.jpg" alt=""></p>
-<p>降维的目的，是为了找到一个映射矩阵$W\in R^{k\times d}$,将原始数据都映射到d维空间中。</p>
-<p>如图所示，以2维空间到1维空间降维为例。原数据在直线上的映射点的位置之与直线的斜率（或者说是方向向量）有关，且直线是可以平移的。因此我们假设目标直线是过原点的，即：$Wx = 0$。</p>
-<h3 id="W求解过程"><a href="#W求解过程" class="headerlink" title="W求解过程"></a>W求解过程</h3><p>每一个数据点$x_i$映射到直线$Wx=0$上之后，映射点为：$Wx_i$</p>
-<p>那么数据集$X$映射后的数据为:$XW^T\in R^{n\times k}$</p>
-<p>step1: 映射矩阵$W\in R^{k\times d}$将数据集$X$映射到$k$维空间：$XW^{T}$</p>
-<p>step2: 映射后，数据的协方差矩阵为：$(XW^{T})^{T}(XW^{T})=WX^{T}XW^{T}$</p>
-<p>最大可区分性，就是使得数据在各个维度上的方差最大，也就是数据最分散，越分散区分性越大。因此最大可区分性的优化目标就是，数据集在各位维度上的方差最大化。而各个维度的方差等于协方差矩阵的对角元素之和，也就是矩阵的迹。</p>
-<p>step3: 因此优化目标：$min \text{tr}(WX^{T}XW^{T}), s.t. WW^T = I$</p>
-<p>step4: 拉格朗日法求解，可得：$X^TXW^T = \lambda W$</p>
-<p>$W$的解为矩阵$X^TX$的特征向量。</p>
-<h3 id="与SVD的关系"><a href="#与SVD的关系" class="headerlink" title="与SVD的关系"></a>与SVD的关系</h3><p>奇异值分解，对于矩阵X，其奇异值分解为: $X = U\Sigma V^T$</p>
-<p>而矩阵$X^TX = (U\Sigma V)^TU\Sigma V^T = V\Sigma U^TU\Sigma V^T = V\Sigma^2 V^T$</p>
-<p>因此矩阵$X^TX$的特征值构成的矩阵$V$即为矩阵$X$奇异值分解后的右特征矩阵。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iris = datasets.load_iris()</span><br><span class="line">X = iris[<span class="string">'data'</span>]</span><br><span class="line">Y = iris[<span class="string">'target'</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''normalization mean = 0, std = 1'''</span></span><br><span class="line">X_normed = (X - X.mean(axis=<span class="number">0</span>)) / X.std(axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">'''SVD of X_normed'''</span></span><br><span class="line">U, Sigma, VT = np.linalg.svd(X_normed)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''take the vector from V'''</span></span><br><span class="line">W = VT.T[:<span class="number">2</span>,:]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''conduct PCA 降维'''</span></span><br><span class="line">X_pca = X_normed.dot(W.T)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''visualization'''</span></span><br><span class="line">plt.scatter(X_pca[:,<span class="number">0</span>],X_pca[:,<span class="number">1</span>], c=Y)</span><br></pre></td></tr></table></figure>
+<p>张维老师回答到：</p>
+<p>“中国的确是一个特殊的国家，我们称之为一个‘文明型国家’，这意味着，它既拥有世界最悠久的文明，也是一个超大型的现代国家。还有另外一个词可以形容它，我们称之为‘百国之合’，即在历史的长河中兼收并蓄融合了数百个国家。换而言之，如今的中国是其古老历史的延续。过去的两千多年里，中国一直都被统一的执政集团治理，更重要的，这种统一执政集团的背后是选贤任能。中国发明了我们如今所说的科举考试制度，这种择优录取的制度一直延续至今，整个制度贯穿选贤任能的原则，我们称之为选拔。先要通过选拔，才可进入政治局常务委员会，至少要治理过数以亿计的人口，才有资格进入政治局常委会，这已经是非常苛刻的要求了，所以我将中国的政治体制描述为‘选拔+选举’，它比美国仅仅靠选举的体制要更加有效。在奈克萨斯大会辩论中，我曾说过：‘天啊，你知道，小布什还有特朗普的竞选标准远远低于中国选举领导人的标准，标准太低了。’”</p>
+<p>以上就是张维老师的回答。</p>
+<p>“中国政府的合法性源自哪里”这种说法本身就是一个谬论，这句话直接就把政权和法权分开了，不知道他这是基于哪个国家的体制得出的结论。在中国，政法不分家，没有任何人说过法大于政，更不会说中国政府是由哪个法律批准的。在西方传统的政体中，最早由君主分封从而得到所谓的合法性，后来变成了得到宗教的承认，因此这个AwanRiak会问出这样的问题。</p>
+<p>中国自古以来就是打天下者治天下，那为什么由打天下者治天下呢？</p>
+<p>首先，他们能打下天下，说明能力已经不是问题。其次，他们为什么打天下，他们一定有天降大任在身。</p>
+<p>在古代，这个天降大任就是推翻腐朽剥削的旧统治，让天下人民过上好日子。这样一群有能力且以全天下人民的福祉为己任的人，他们执政治理毋庸置疑。</p>
+<p>在近现代，中国共产党在中国人民的支持下，历尽艰辛推翻了封建统治且赶走了帝国主义的侵掠，能力与决心是看的见的。更重要的，中国共产党以为人民服务为宗旨，以中华名族伟大复兴为己任。中国共产党执政，带领中华名族走向伟大复兴，这是历史的必然。</p>
+<p>中国人民支持和信任中国共产党，中国政府为人民服务，相辅相成，谁也离不开谁。共产党是鱼，人民群众是水，鱼来自于水，也离不开水。中国政府的合法性这句话完全不足以成为一个问题。</p>
+<iframe src="//player.bilibili.com/player.html?aid=18411618&bvid=BV1jW411v7Xy&cid=30050620&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-<p><img src="http://img.chsong.live/Blogs/PCA%E4%B8%8ESVD%E7%9A%84%E5%85%B3%E7%B3%BB/2.png-o" alt="png"></p>
+
 <p><img src="http://img.chsong.live/Blogs/guanzhu.png-o" alt=""><br><img src="http://img.chsong.live/Blogs/gzh.jpeg-o" alt=""></p>
 
 	  
@@ -183,19 +170,10 @@
   
   <nav class="article-nav">
     
-      <a href="/20201229_%E4%BA%94%E8%BF%9E%E7%BB%9D%E4%B8%96/index.html" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            五杀片段
-          
-        </div>
-      </a>
     
-    
-      <a href="/20201205_TCA/index.html" class="article-nav-link">
+      <a href="/20210420_%E4%BD%A0%E4%B8%8D%E8%83%BD%E6%AF%94%E6%88%91%E5%A5%BD/index.html" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Transfer Component Analyze (TCA)</div>
+        <div class="article-nav-title">你不能比我好</div>
       </a>
     
   </nav>
@@ -289,25 +267,6 @@
   
   
   
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-      tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-  });
-
-  MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 
 </article>
 </section>
